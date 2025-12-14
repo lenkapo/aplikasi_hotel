@@ -1,0 +1,884 @@
+Uri: https://fonts.googleapis.com/css?family=Poppins|Quicksand:500,700
+File Name: C:\Downloaded Web Sites\rn53themes.net\css
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfedw.ttf
+File Name: C:\Downloaded Web Sites\rn53themes.net\s\poppins\v24\pxiEyp8kv8JHgFVrJJfedw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/quicksand/v37/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkBgv58a-xw.ttf
+File Name: C:\Downloaded Web Sites\rn53themes.net\s\quicksand\v37\6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkBgv58a-xw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/quicksand/v37/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkM0o58a-xw.ttf
+File Name: C:\Downloaded Web Sites\rn53themes.net\s\quicksand\v37\6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkM0o58a-xw.ttf
+Content Type: font/ttf
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/about-us.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\about-us.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/all-hotels.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\all-hotels.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/all-rooms.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\all-rooms.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/all-rooms1.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\all-rooms1.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/aminities.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\aminities.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/aminities1.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\aminities1.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/blog-inner.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\blog-inner.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/blog.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\blog.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/booking.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\booking.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/collapsible.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\collapsible.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/contact-us.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\contact-us.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/css/bootstrap.css
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\css\bootstrap.css
+Content Type: text/css
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/css/font-awesome.min.css
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\css\font-awesome.min.css
+Content Type: text/css
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/css/materialize.css
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\css\materialize.css
+Content Type: text/css
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/css/responsive.css
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\css\responsive.css
+Content Type: text/css
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/css/style.css
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\css\style.css
+Content Type: text/css
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/dashboard.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\dashboard.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/db-activity.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\db-activity.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/db-booking.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\db-booking.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/db-event.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\db-event.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/db-new-booking.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\db-new-booking.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/db-profile.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\db-profile.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/events.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\events.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/fonts/fontawesome-webfont.eot?
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\fonts\fontawesome-webfont-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/fonts/fontawesome-webfont.eot?v=4.6.3
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\fonts\fontawesome-webfont.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/fonts/fontawesome-webfont.svg?v=4.6.3
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\fonts\fontawesome-webfont.svg
+Content Type: image/svg+xml
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/fonts/fontawesome-webfont.ttf?v=4.6.3
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\fonts\fontawesome-webfont.ttf
+Content Type: font/ttf
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/fonts/fontawesome-webfont.woff2?v=4.6.3
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\fonts\fontawesome-webfont.woff2
+Content Type: font/woff2
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/fonts/fontawesome-webfont.woff?v=4.6.3
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\fonts\fontawesome-webfont.woff
+Content Type: font/woff
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/fonts/micon.woff2
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\fonts\micon.woff2
+Content Type: font/woff2
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/form-fields.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\form-fields.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/gallery.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\gallery.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/gallery1.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\gallery1.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/gallery2.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\gallery2.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/hotel-detail.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\hotel-detail.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/hotel-details.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\hotel-details.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/about.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\about.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/10.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\10.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/11.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\11.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/5.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\5.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/6.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\6.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/7.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\7.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/8.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\8.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/ami/9.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\ami\9.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/bread.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\bread.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/cancel.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\cancel.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/card.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\card.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/detailed-banner.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\detailed-banner.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/event/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\event\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/event/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\event\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/event/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\event\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/event/4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\event\4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/extra/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\extra\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/extra/6.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\extra\6.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/extra/9.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\extra\9.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/fav.ico
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\fav.ico
+Content Type: image/x-icon
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/h-check-block.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\h-check-block.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/h-check.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\h-check.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/h-detail.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\h-detail.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/h-trip.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\h-trip.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/hotel/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\hotel\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/hotel/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\hotel\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/hotel/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\hotel\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/hotel/4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\hotel\4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/hotel/5.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\hotel\5.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/hotel/bg.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\hotel\bg.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/13.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\13.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/14.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\14.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/15.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\15.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/16.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\16.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/17.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\17.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/2.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\2.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/20.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\20.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/21.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\21.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/22.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\22.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/5.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\5.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/6.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\6.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a1.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a1.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a10.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a10.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a11.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a11.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a12.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a12.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a2.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a2.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a3.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a3.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a4.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a4.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a5.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a5.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a6.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a6.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a7.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a7.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a8.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a8.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/a9.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\a9.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/arrow.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\arrow.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/db1.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\db1.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/db2.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\db2.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/db3.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\db3.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/db4.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\db4.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/db5.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\db5.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/db6.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\db6.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/db7.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\db7.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/db8.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\db8.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbc1.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbc1.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbc3.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbc3.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbc4.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbc4.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbc5.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbc5.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbc6.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbc6.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbr1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbr1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbr2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbr2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbr3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbr3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbr4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbr4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbr5.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbr5.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbr6.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbr6.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbr7.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbr7.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dbr8.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dbr8.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dis1.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dis1.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dis3.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dis3.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dis4.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dis4.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/dis5.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\dis5.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/h1.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\h1.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/h2.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\h2.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/h5.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\h5.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/icon/h7.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\icon\h7.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/inn-bg.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\inn-bg.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/left-arrow.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\left-arrow.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/login.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\login.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/logo.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\logo.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/logo1.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\logo1.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/10.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\10.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/11.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\11.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/12.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\12.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/13.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\13.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/14.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\14.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/15.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\15.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/16.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\16.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/5.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\5.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/6.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\6.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/7.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\7.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/8.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\8.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/menu/9.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\menu\9.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/offer-bg.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\offer-bg.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/payment.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\payment.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/right-arrow.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\right-arrow.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/room/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\room\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/room/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\room\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/room/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\room\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/room/4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\room\4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/room/5.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\room\5.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/room/6.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\room\6.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/slide2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\slide2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/slider/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\slider\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/slider/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\slider\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/slider/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\slider\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/slider/4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\slider\4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/stars.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\stars.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/user.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\user.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/users/2.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\users\2.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/users/3.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\users\3.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/users/4.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\users\4.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/users/5.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\users\5.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/images/users/6.png
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\images\users\6.png
+Content Type: image/png
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/app/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\app\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/app/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\app\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/app/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\app\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/card/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\card\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/card/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\card\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/card/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\card\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/card/4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\card\4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/card/5.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\card\5.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/icon/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\icon\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/icon/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\icon\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/icon/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\icon\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/icon/4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\icon\4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/icon/5.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\icon\5.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/logo/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\logo\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/logo/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\logo\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/logo/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\logo\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/logo/4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\logo\4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/logo/5.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\logo\5.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/logo/6.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\logo\6.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/logo/7.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\logo\7.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/web/1.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\web\1.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/web/2.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\web\2.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/web/3.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\web\3.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/img/portfolios/web/4.jpg
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\img\portfolios\web\4.jpg
+Content Type: image/jpeg
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/index-1.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\index-1.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/index-2.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\index-2.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/index-3.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\index-3.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/js/angular.min.js
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\js\angular.min.js
+Content Type: application/javascript
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/js/bootstrap.js
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\js\bootstrap.js
+Content Type: application/javascript
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/js/custom.js
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\js\custom.js
+Content Type: application/javascript
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/js/jquery-ui.js
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\js\jquery-ui.js
+Content Type: application/javascript
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/js/jquery.min.js
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\js\jquery.min.js
+Content Type: application/javascript
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/js/jquery.mixitup.min.js
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\js\jquery.mixitup.min.js
+Content Type: application/javascript
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/js/materialize.min.js
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\js\materialize.min.js
+Content Type: application/javascript
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/main.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\main.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/menu.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\menu.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/menu1.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\menu1.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/preloading.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\preloading.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/room-details-1.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\room-details-1.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/room-details-block.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\room-details-block.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/room-details.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\room-details.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/services.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\services.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/sitemap.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\sitemap.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/typho-grid.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\typho-grid.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/typo-alert.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\typo-alert.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/typo-all-head.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\typo-all-head.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/typo-badges-labels.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\typo-badges-labels.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/typo-buttons.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\typo-buttons.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/typo-pagination.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\typo-pagination.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/typo-progressbar.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\typo-progressbar.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/typo-slider.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\typo-slider.html
+Content Type: text/html
+
+Uri: https://rn53themes.net/themes/demo/the-royal-hotel/typo-table.html
+File Name: C:\Downloaded Web Sites\rn53themes.net\themes\demo\the-royal-hotel\typo-table.html
+Content Type: text/html
+
