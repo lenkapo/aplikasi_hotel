@@ -14,7 +14,7 @@ class Beranda extends CI_Controller
 		parent::__construct();
 		$this->load->model([
 			'Beranda_model',
-			'Kamar_model',
+			'Room_model',
 			'Reservasi_model',
 			'Gallery_model',
 			'Post_model',
@@ -40,11 +40,6 @@ class Beranda extends CI_Controller
 		}
 		$data = [
 			'title'           => 'Beranda',
-			'all_tipe_kamar'  => $this->Beranda_model->get_all_tipe_kamar_with_features(),
-			'all_amenities'   => $this->Beranda_model->get_all_amenities_by_hotel(1),
-			'room_min_price'  => $this->Beranda_model->get_min_room_price(),
-			'extra_services'  => $extra_services,
-			'testimonials'    => $this->Beranda_model->get_testimonials(),
 
 		];
 
@@ -202,14 +197,48 @@ class Beranda extends CI_Controller
 
 	public function room()
 	{
+		$rooms = $this->Room_model->get_all_rooms();
+		$today = date('Y-m-d');
+
+		foreach ($rooms as $room) {
+			$room->discount_percent = 0;
+			$room->discount_rp = 0;
+			$room->is_daily_deal = false;
+			$room->time_left = null;
+
+			// cek diskon
+			if (!empty($room->old_price) && $room->old_price > $room->price) {
+				$room->discount_rp = $room->old_price - $room->price;
+				$room->discount_percent = round(
+					(($room->old_price - $room->price) / $room->old_price) * 100
+				);
+			}
+
+			// cek Daily Deal (tanggal)
+			if (!empty($room->promo_start) && !empty($room->promo_end)) {
+				if ($today >= $room->promo_start && $today <= $room->promo_end) {
+					$room->is_daily_deal = true;
+					$room->time_left = $room->promo_end . ' 23:59:59';
+				}
+			}
+		}
+
+		// urutkan promo paling dekat habis dulu
+		usort($rooms, function ($a, $b) {
+			$ta = $a->time_left_seconds ?? PHP_INT_MAX;
+			$tb = $b->time_left_seconds ?? PHP_INT_MAX;
+			return $ta <=> $tb;
+		});
+
 		$data = [
 			'title' => 'Beranda',
-			'all_tipe_kamar' => $this->Beranda_model->get_all_tipe_kamar_with_features(),
-			'all_amenities' => $this->Beranda_model->get_all_amenities_by_hotel(1),
-			'room_min_price' => $this->Beranda_model->get_min_room_price(),
+			'rooms' => $rooms,
 		];
+
 		$this->_load_template('room', $data);
 	}
+
+
 
 	// Halaman galeri
 	public function gallery()

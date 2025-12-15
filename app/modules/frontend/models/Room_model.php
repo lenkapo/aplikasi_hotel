@@ -7,37 +7,46 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * Deskripsi: Menangani semua operasi database terkait kamar hotel
  */
 
-class Kamar_model extends CI_Model
+class Room_model extends CI_Model
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    /* ==========================================================
-       BAGIAN 1. DAFTAR DAN DETAIL KAMAR
-       ========================================================== */
-
     /**
      * Ambil semua kamar yang tersedia (opsional dengan filter harga, fitur, dsb)
      * @param array $filters (opsional)
      * @return array
      */
-    public function get_all_kamar($filters = [])
+    public function get_all_rooms()
     {
-        $this->db->select('k.id, k.name, k.price, k.main_image, k.deskripsi, k.amenities,');
-        $this->db->from('tipe_kamar k');
+        // ambil semua kamar
+        $rooms = $this->db->get('rooms')->result();
 
-        // Filter opsional
-        if (!empty($filters['min_price'])) {
-            $this->db->where('k.price >=', $filters['min_price']);
-        }
-        if (!empty($filters['max_price'])) {
-            $this->db->where('k.price <=', $filters['max_price']);
+        // untuk setiap kamar, ambil fiturnya
+        foreach ($rooms as $room) {
+            $this->db->select('f.nama_fitur');
+            $this->db->from('room_features rf');
+            $this->db->join('features f', 'rf.feature_id = f.id', 'left');
+            $this->db->where('rf.room_id', $room->id);
+            $fiturs = $this->db->get()->result();
+
+            // jadikan array string
+            $list = [];
+            foreach ($fiturs as $f) {
+                $list[] = $f->nama_fitur;
+            }
+
+            $room->fitur_list = $list;
         }
 
-        $this->db->order_by('k.price', 'ASC');
-        return $this->db->get()->result();
+        return $rooms;
+    }
+
+    public function get_room($id)
+    {
+        return $this->db->get_where('rooms', ['id' => $id])->row();
     }
 
     /**

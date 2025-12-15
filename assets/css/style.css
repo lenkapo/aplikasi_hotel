@@ -686,9 +686,9 @@ td {}
 }
 
 .r-com ul li {
-    background: url('../images/h-check.png') no-repeat left center;
+    background: url('') no-repeat left center;
     background-size: 10px;
-    padding-left: 20px;
+    padding-left: 2px;
     line-height: 28px;
 }
 
@@ -747,7 +747,7 @@ td {}
     font-family: 'Quicksand', sans-serif;
     border-radius: 2px;
     width: 100%;
-    font-size: 28px;
+    font-size: 20px;
     display: table-caption;
     background: #d0ae64;
     /* fallback for old browsers */
@@ -5476,5 +5476,333 @@ form .stars label:before {
 li.active>a {
     color: #f4364f;
     font-weight: 600;
-    border-bottom: 1px solid #f4364f;
+    border-bottom: 2px solid #f4364f;
+}
+
+.deal-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #e74c3c;
+    padding: 15px 18px;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s ease-out;
+    z-index: 9999;
+}
+
+.deal-popup-content h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+
+.deal-popup-content p {
+    margin: 0 0 10px;
+}
+
+.deal-popup-content .close-btn {
+    padding: 6px 10px;
+    border: none;
+    background: #fff;
+    color: #e74c3c;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* Daily Deal Badge */
+.badge-daily-deal {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    background: #000000;
+    color: #fff;
+    font-size: 5px;
+    font-weight: bold;
+    padding: 2px 2px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+
+/* Countdown style */
+.badge-daily-deal .countdown {
+    font-size: 14px;
+    background: #000000;
+    color: #ffffff;
+    padding: 3px 3px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.badge-daily-deal {
+    animation: pulse 1.4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Discount Badge */
+.price-badge-discount {
+    display: inline-block;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    align-items: center;
+}
+
+/* Animasinya */
+@keyframes blink-animation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.price-badge-discount.blink {
+    animation: blink-animation 0s infinite;
+}
+
+/* Harga */
+.room-price-1 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.room-price-old {
+    font-size: 1.2rem;
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+}
+
+.text-hemat {
+    font-size: 11px;
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.room-capacity-badges {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    gap: 12px;
+}
+
+.room-capacity-badges li {
+    background: #f0f0f0;
+    padding: 2px 2px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    align-items: center;
+    gap: 6px;
+}
+
+.room-capacity-badges li i {
+    color: black;
+}
+
+
+
+
+/* Status Available or Unavailable */
+.r2-available.available {
+    background: #27ae60;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.r2-available.unavailable {
+    background: #e74c3c;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* STATUS BADGES */
+.r2-available {
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.r2-available.status-1 {
+    background-color: #27ae60;
+}
+
+/* Available – hijau */
+.r2-available.status-2 {
+    background-color: #f1c40f;
+}
+
+/* Not Available – kuning */
+.r2-available.status-3 {
+    background-color: #e74c3c;
+}
+
+/* Fully Booked – merah */
+.r2-available.status-4 {
+    background-color: #95a5a6;
+}
+
+/* Maintenance – abu */
+.r2-available.status-5 {
+    background-color: #c0392b;
+}
+
+/* Sold Out – merah tua */
+.r2-available.status-6 {
+    background-color: #2980b9;
+}
+
+/* Promo – biru */
+
+/* Coming Soon → biru */
+
+/* ===== TOOLTIP ===== */
+.tooltip-status {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+}
+
+/* Tooltip text */
+.tooltip-status .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Show on hover */
+.tooltip-status:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Default on desktop: right */
+.tooltip-status .tooltip-text {
+    top: 37%;
+    left: 110%;
+    transform: translate(0, -50%);
+}
+
+/* Arrow pointing left */
+.tooltip-status .tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent;
+}
+
+/* Responsive: mobile / small screens */
+@media (max-width: 768px) {
+    .tooltip-status .tooltip-text {
+        top: -110%;
+        /* above */
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .tooltip-status .tooltip-text::after {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+    }
+
+    .room-amenities-icons {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .room-amenities-icons li {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        color: #444;
+        padding: 4px 8px;
+    }
+
+    .room-amenities-icons li i {
+        font-size: 18px;
+        color: #27ae60;
+        /* warna ikon, bisa disesuaikan */
+    }
+
+    .room-amenities-icons .amenity-text {
+        display: none;
+        /* sembunyikan teks jika mau icon only */
+    }
+
+    /* jika ingin teks tampil di samping icon: */
+    .room-amenities-icons.show-text .amenity-text {
+        display: inline;
+    }
+
+
+
 }
