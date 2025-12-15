@@ -20,7 +20,8 @@ class Beranda extends CI_Controller
 			'Post_model',
 			'Category_model',
 			'User_model',
-			'Comment_model'
+			'Comment_model',
+			'Hotel_model'
 		]);
 		$this->load->helper(['url', 'form', 'text']);
 		$this->load->library(['session', 'form_validation']);
@@ -236,6 +237,14 @@ class Beranda extends CI_Controller
 		];
 
 		$this->_load_template('room', $data);
+	}
+
+	public function ourhotel()
+	{
+		$data['title'] = 'Our Hotels';
+		$data['hotels'] = $this->Hotel_model->get_all();
+
+		$this->_load_template('our_hotel', $data);
 	}
 
 

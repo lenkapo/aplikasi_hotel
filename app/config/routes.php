@@ -55,6 +55,9 @@ $route['room'] = 'frontend/Beranda/room';
 $route['gallery'] = 'frontend/Beranda/gallery';
 $route['restaurant'] = 'frontend/Beranda/restaurant';
 $route['blog'] = 'frontend/Beranda/blog';
+
+$route['our_hotel'] = 'frontend/Beranda/ourhotel';
+
 $route['tentang_kami'] = 'frontend/Beranda/tentangkami';
 $route['contact'] = 'frontend/Beranda/contact';
 $route['blog_detail/(:any)'] = 'frontend/Beranda/blog_detail/$1';

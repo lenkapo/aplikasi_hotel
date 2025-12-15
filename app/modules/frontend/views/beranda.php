@@ -119,7 +119,8 @@
     background-position: center;
     width: 100%;
     height: auto;
-    min-height: 100vh;">
+    min-height: 100vh;
+	">
 		<!--TOP SECTION-->
 		<div class="menu-section">
 			<div class="container">
@@ -128,11 +129,11 @@
 						<ul>
 							<li><a class='dropdown-button' href='#' data-activates='dropdown1'> My Account <i class="fa fa-angle-down"></i></a>
 							</li>
-							<li><a href="all-hotels.html">Our Hotels</a>
+							<li><a href="<?= base_url('our_hotel') ?>">Our Hotels</a>
 							</li>
-							<li><a href="about-us.html">About Us</a>
+							<li><a href="<?= base_url('about') ?>">About Us</a>
 							</li>
-							<li><a href="contact-us.html">Contact Us</a>
+							<li><a href="<?= base_url('contact') ?>">Contact Us</a>
 							</li>
 							<li><a class='dropdown-button' href='#' data-activates='dropdown2'>Language <i class="fa fa-angle-down"></i></a>
 							</li>
@@ -358,22 +359,22 @@
 						<div class="home-bod-1">
 							<h4>Today up to <span>70%</span> offer</h4>
 							<h2>Hotel Booking</h2>
-							<p>a procedure intended to establish the quality, performance, or reliability of something, especially before it is taken into widespread use.</p>
-							<p>a procedure intended to establish the quality, performance, or reliability of something, especially before it is taken into widespread use.</p>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, hic! Mollitia eligendi tempore odio, placeat iusto maiores illo aut veritatis, nulla doloremque neque incidunt quasi magni cupiditate ipsam. Ex, fugiat.</p>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste perferendis nostrum sit, molestiae harum id culpa consequuntur doloribus odio. Nostrum optio delectus consequatur eveniet error odio labore aspernatur quos nulla.</p>
 						</div>
 						<div class="home-bod-2">
 							<ul>
 								<li>
-									<a href="all-hotels.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h1.png" alt=""> Hotels</a>
+									<a href="all-hotels.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h1.png') ?>" alt=""> Hotels</a>
 								</li>
 								<li>
-									<a href="all-rooms.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h7.png" alt=""> Booking</a>
+									<a href="<?= base_url('room') ?>" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h7.png') ?>" alt=""> Booking</a>
 								</li>
 								<li>
-									<a href="menu.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h2.png" alt=""> Menu</a>
+									<a href="menu.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h2.png') ?>" alt=""> Menu</a>
 								</li>
 								<li>
-									<a href="about-us.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h5.png" alt=""> About Us</a>
+									<a href="about-us.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h5.png') ?>" alt=""> About Us</a>
 								</li>
 							</ul>
 						</div>
