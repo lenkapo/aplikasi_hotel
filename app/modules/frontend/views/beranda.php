@@ -115,7 +115,11 @@
 		</div>
 	</section>
 	<!--HEADER SECTION-->
-	<section class="main">
+	<section class="main" style="background: url(assets/images/slider/5.jpg) no-repeat; background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;">
 		<!--TOP SECTION-->
 		<div class="menu-section">
 			<div class="container">

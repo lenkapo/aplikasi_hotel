@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2025 at 12:32 AM
+-- Generation Time: Dec 15, 2025 at 10:35 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -498,44 +498,25 @@ INSERT INTO `extra_service_features` (`id`, `service_id`, `fitur`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fitur`
+-- Table structure for table `features`
 --
 
-CREATE TABLE `fitur` (
+CREATE TABLE `features` (
   `id` int(11) NOT NULL,
-  `nama_fitur` varchar(100) NOT NULL,
-  `ikon` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nama_fitur` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `fitur`
+-- Dumping data for table `features`
 --
 
-INSERT INTO `fitur` (`id`, `nama_fitur`, `ikon`) VALUES
-(1, 'Free Wifi', 'ri-wifi-line'),
-(2, 'Breakfast', 'ri-restaurant-2-line'),
-(3, 'Swimming Pool', 'mdi mdi-pool');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `fitur_kamar`
---
-
-CREATE TABLE `fitur_kamar` (
-  `id` int(11) NOT NULL,
-  `id_tipe_kamar` int(11) NOT NULL,
-  `id_fitur` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `fitur_kamar`
---
-
-INSERT INTO `fitur_kamar` (`id`, `id_tipe_kamar`, `id_fitur`) VALUES
-(3, 1, 1),
-(4, 1, 2),
-(5, 1, 3);
+INSERT INTO `features` (`id`, `nama_fitur`) VALUES
+(1, 'Ironing facilities'),
+(2, 'Tea/Coffee maker'),
+(3, 'Air conditioning'),
+(4, 'Flat-screen TV'),
+(5, 'Wake-up service'),
+(6, 'WIFI');
 
 -- --------------------------------------------------------
 
@@ -859,6 +840,63 @@ INSERT INTO `restaurant_menu` (`id`, `nama_menu`, `harga`, `deskripsi`, `image`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rooms`
+--
+
+CREATE TABLE `rooms` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `old_price` decimal(10,2) DEFAULT NULL,
+  `max_adult` int(3) NOT NULL,
+  `max_child` int(3) NOT NULL,
+  `rating` decimal(3,1) DEFAULT 0.0,
+  `main_image` varchar(255) DEFAULT NULL,
+  `deskripsi` text DEFAULT NULL,
+  `status` tinyint(2) NOT NULL DEFAULT 1,
+  `tag` varchar(50) DEFAULT NULL,
+  `promo_start` date DEFAULT NULL,
+  `promo_end` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `rooms`
+--
+
+INSERT INTO `rooms` (`id`, `name`, `price`, `old_price`, `max_adult`, `max_child`, `rating`, `main_image`, `deskripsi`, `status`, `tag`, `promo_start`, `promo_end`) VALUES
+(1, 'Master Suite', '150000.00', '165000.00', 3, 1, '4.5', '1.jpg', 'Kamar mewah dengan fasilitas lengkap', 6, 'Featured', '2025-12-14', '2025-12-14'),
+(2, 'Mini Suite', '4000.00', '4500.00', 2, 1, '4.2', '2.jpg', 'Kamar nyaman untuk keluarga kecil', 1, 'special', '2025-12-15', '2025-12-15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room_features`
+--
+
+CREATE TABLE `room_features` (
+  `id` int(11) NOT NULL,
+  `room_id` int(11) NOT NULL,
+  `feature_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `room_features`
+--
+
+INSERT INTO `room_features` (`id`, `room_id`, `feature_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 1, 5),
+(6, 2, 1),
+(7, 2, 2),
+(8, 2, 3),
+(9, 1, 6);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sys_codes`
 --
 
@@ -957,34 +995,6 @@ CREATE TABLE `testimonials` (
 INSERT INTO `testimonials` (`id`, `nama`, `asal`, `foto`, `pesan`, `rating`, `created_at`) VALUES
 (1, 'Luqman Aly Razak', 'Bogor, Indonesia', 'testi-1.jpg', '\"Bagus\"', 5, '2025-12-01 08:34:57'),
 (2, 'Michael Nova', 'California, USA', 'testi-1.jpg', '\"Sangat puas menginap di hotel ini, pelayanannya luar biasa...\"', 5, '2025-12-01 08:34:57');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tipe_kamar`
---
-
-CREATE TABLE `tipe_kamar` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `price` decimal(12,2) NOT NULL,
-  `capacity` int(3) NOT NULL DEFAULT 1,
-  `tipe_kasur` varchar(50) NOT NULL DEFAULT 'Single Bed',
-  `main_image` varchar(255) DEFAULT NULL,
-  `amenities` text DEFAULT NULL,
-  `deskripsi` text DEFAULT NULL,
-  `is_active` tinyint(1) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tipe_kamar`
---
-
-INSERT INTO `tipe_kamar` (`id`, `name`, `price`, `capacity`, `tipe_kasur`, `main_image`, `amenities`, `deskripsi`, `is_active`, `created_at`) VALUES
-(2, 'Suite Room', '1350000.00', 1, 'Single', 'ROOM_1765597626.jpeg', 'TV,AC,WiFi,Mini Bar,Bath Tub', 'Kamar mewah dengan ruang tamu.', 0, '2025-12-13 03:47:06'),
-(3, 'Superior Room', '250000.00', 1, 'Single', 'ROOM_1765597306.jpeg', '', 'Kamar Superior', 0, '2025-12-13 03:41:46'),
-(5, 'Standar Room', '165000.00', 2, 'Queen Bed', 'ROOM_1765596588.jpeg', 'Tempat tidur,   AC,  Smart/LED TV,  Wi-Fi cepat  Meja kerja  Air mineral harian  Lemari pakaian', 'Standar Room menawarkan kenyamanan modern dengan desain elegan dan fasilitas lengkap. Dilengkapi tempat tidur premium, AC, Smart TV, Wi-Fi cepat, serta area kerja nyaman. Kamar mandi bersih dengan shower air panas, handuk lembut, dan perlengkapan mandi lengkap.\r\n\r\nPilihan ideal untuk tamu bisnis maupun liburan yang mencari kamar nyaman, bersih, dan terjangkau.', 1, '2025-12-13 07:30:47');
 
 -- --------------------------------------------------------
 
@@ -1231,18 +1241,10 @@ ALTER TABLE `extra_service_features`
   ADD KEY `service_id` (`service_id`);
 
 --
--- Indexes for table `fitur`
+-- Indexes for table `features`
 --
-ALTER TABLE `fitur`
+ALTER TABLE `features`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `fitur_kamar`
---
-ALTER TABLE `fitur_kamar`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_tipe_kamar` (`id_tipe_kamar`),
-  ADD KEY `id_fitur` (`id_fitur`);
 
 --
 -- Indexes for table `gallery`
@@ -1309,6 +1311,20 @@ ALTER TABLE `restaurant_menu`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `rooms`
+--
+ALTER TABLE `rooms`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `room_features`
+--
+ALTER TABLE `room_features`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `room_id` (`room_id`),
+  ADD KEY `feature_id` (`feature_id`);
+
+--
 -- Indexes for table `sys_codes`
 --
 ALTER TABLE `sys_codes`
@@ -1331,12 +1347,6 @@ ALTER TABLE `tamu`
 -- Indexes for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tipe_kamar`
---
-ALTER TABLE `tipe_kamar`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1447,16 +1457,10 @@ ALTER TABLE `extra_service_features`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `fitur`
+-- AUTO_INCREMENT for table `features`
 --
-ALTER TABLE `fitur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `fitur_kamar`
---
-ALTER TABLE `fitur_kamar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `features`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `gallery`
@@ -1513,6 +1517,18 @@ ALTER TABLE `restaurant_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `rooms`
+--
+ALTER TABLE `rooms`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `room_features`
+--
+ALTER TABLE `room_features`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `sys_codes`
 --
 ALTER TABLE `sys_codes`
@@ -1535,12 +1551,6 @@ ALTER TABLE `tamu`
 --
 ALTER TABLE `testimonials`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tipe_kamar`
---
-ALTER TABLE `tipe_kamar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `topics`
@@ -1571,6 +1581,13 @@ ALTER TABLE `alus_ug`
 ALTER TABLE `detail_reservasi`
   ADD CONSTRAINT `detail_reservasi_ibfk_1` FOREIGN KEY (`id_reservasi`) REFERENCES `reservasi` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_detail_tipe_kamar` FOREIGN KEY (`id_tipe_kamar`) REFERENCES `tipe_kamar` (`id`);
+
+--
+-- Constraints for table `room_features`
+--
+ALTER TABLE `room_features`
+  ADD CONSTRAINT `room_features_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `room_features_ibfk_2` FOREIGN KEY (`feature_id`) REFERENCES `features` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

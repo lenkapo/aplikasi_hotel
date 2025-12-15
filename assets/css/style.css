@@ -193,12 +193,13 @@ th {
 /*-------------------------------------------------*/
 
 .main {
-    background: url(../images/slide2.jpg) no-repeat;
-    background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 100vh;
 }
+
 
 .top-section {
     background: rgba(0, 0, 0, 0.67);
