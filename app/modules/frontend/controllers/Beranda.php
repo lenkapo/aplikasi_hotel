@@ -242,7 +242,8 @@ class Beranda extends CI_Controller
 	public function ourhotel()
 	{
 		$data['title'] = 'Our Hotels';
-		$data['hotels'] = $this->Hotel_model->get_all();
+		$data['featured'] = $this->Hotel_model->get_featured();
+		$data['hotels']   = $this->Hotel_model->get_others();
 
 		$this->_load_template('our_hotel', $data);
 	}

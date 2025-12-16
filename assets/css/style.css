@@ -443,7 +443,7 @@ th {
 
 .foot-com ul {
     margin-bottom: 0px;
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
 .foot-com ul li {
@@ -470,23 +470,30 @@ th {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 0px;
-    margin-top: 7px;
+    margin-top: 10px;
 }
 
 .foot-3 a {
+    display: inline-block;
     background: #f4364f;
-    padding: 7px 25px;
+    padding: 10px 28px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
     font-family: 'Quicksand', sans-serif;
-    border-radius: 2px;
+    border-radius: 3px;
     font-size: 14px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .foot-3 a:hover {
+    background: #ff0022;
     color: #fff;
 }
+
 
 .foot-3 {
     float: right;
@@ -494,10 +501,13 @@ th {
 
 .foot-4 {
     float: right;
+    display: flex;
+    justify-content: center;
 }
 
 .foot-4 a img {
-    width: 170px;
+    width: 18 0px;
+    margin-top: 10px;
 }
 
 /*-------------------------------------------------*/
@@ -777,6 +787,12 @@ td {}
     font-size: 20px;
     display: table-caption;
     background: #d0ae64;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* tengah horizontal */
+    justify-content: center;
     /* fallback for old browsers */
 
     background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);
@@ -5829,6 +5845,22 @@ li.active>a {
     .room-amenities-icons.show-text .amenity-text {
         display: inline;
     }
+
+    .payment-logos {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* KECILKAN LOGO */
+    .foot-com .foot-4 .payment-logos img {
+        width: 48px;
+        height: 26px;
+    }
+
+
+
+
 
 
 

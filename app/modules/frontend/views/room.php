@@ -406,7 +406,7 @@
                     </div>
 
                     <?php foreach ($rooms as $room): ?>
-                        <div class="room">
+                        <div class="room">e
                             <!-- Ribbon Tag -->
                             <?php if (!empty($room->tag)): ?>
                                 <div class="ribbon ribbon-top-left"><span><?= $room->tag ?></span></div>
