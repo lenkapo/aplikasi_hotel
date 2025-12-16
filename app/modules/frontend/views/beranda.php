@@ -365,16 +365,16 @@
 						<div class="home-bod-2">
 							<ul>
 								<li>
-									<a href="all-hotels.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h1.png') ?>" alt=""> Hotels</a>
+									<a href="<?= site_url('our_hotel') ?>" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h1.png') ?>" alt=""> Hotels</a>
 								</li>
 								<li>
 									<a href="<?= base_url('room') ?>" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h7.png') ?>" alt=""> Booking</a>
 								</li>
 								<li>
-									<a href="menu.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h2.png') ?>" alt=""> Menu</a>
+									<a href="<?= site_url('menu') ?>" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h2.png') ?>" alt=""> Menu</a>
 								</li>
 								<li>
-									<a href="about-us.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h5.png') ?>" alt=""> About Us</a>
+									<a href="<?= site_url('about') ?>" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="<?= base_url('assets/images/icon/h5.png') ?>" alt=""> About Us</a>
 								</li>
 							</ul>
 						</div>

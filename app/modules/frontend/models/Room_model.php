@@ -44,7 +44,7 @@ class Room_model extends CI_Model
         return $rooms;
     }
 
-    public function get_room($id)
+    public function get_by_id($id)
     {
         return $this->db->get_where('rooms', ['id' => $id])->row();
     }

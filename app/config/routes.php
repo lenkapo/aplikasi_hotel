@@ -53,10 +53,18 @@ $route['default_controller'] = 'frontend/Beranda';
 $route['/'] = 'frontend/Beranda/index';
 $route['room'] = 'frontend/Beranda/room';
 $route['gallery'] = 'frontend/Beranda/gallery';
-$route['restaurant'] = 'frontend/Beranda/restaurant';
+
+// Menu
+$route['menu'] = 'frontend/Beranda/menu';
+
+
 $route['blog'] = 'frontend/Beranda/blog';
 
 $route['our_hotel'] = 'frontend/Beranda/ourhotel';
+// Booking
+$route['booking'] = 'frontend/Beranda/booking';
+$route['beranda/submit'] = 'frontend/beranda/submit';
+$route['invoice'] = 'frontend/beranda/invoice';
 
 $route['tentang_kami'] = 'frontend/Beranda/tentangkami';
 $route['contact'] = 'frontend/Beranda/contact';
@@ -67,7 +75,8 @@ $route['room_detail/(:num)'] = 'frontend/Beranda/details/$1';
 $route['beranda/search'] = 'frontend/beranda/search';
 $route['beranda/send_message'] = 'frontend/beranda/send_message';
 
-
+// Subscribe
+$route['subscribe'] = 'Frontend/Beranda/subscribe';
 
 $route['recovery_password'] = 'forgot_password/recov/';
 $route['404_override'] = 'dashboard/error404/';

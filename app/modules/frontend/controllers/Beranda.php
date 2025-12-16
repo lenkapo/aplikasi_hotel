@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  * Controller: Beranda
- * Author: Maulana Rahman (refactored)
+ * Author: Luqman Aly Razak (refactored)
  * Deskripsi: Menangani halaman utama, detail kamar, dan tampilan fasilitas hotel.
  */
 
@@ -21,7 +21,10 @@ class Beranda extends CI_Controller
 			'Category_model',
 			'User_model',
 			'Comment_model',
-			'Hotel_model'
+			'Hotel_model',
+			'Booking_model',
+			'Subscriber_model',
+			'Menu_model'
 		]);
 		$this->load->helper(['url', 'form', 'text']);
 		$this->load->library(['session', 'form_validation']);
@@ -40,15 +43,13 @@ class Beranda extends CI_Controller
 			$s->fitur = $this->Beranda_model->get_features_by_service($s->id);
 		}
 		$data = [
-			'title'           => 'Beranda',
+			'title' => 'Beranda',
 
 		];
 
 
 		$this->_load_template('beranda', $data);
 	}
-
-
 	/**
 	 * Detail fasilitas hotel
 	 * @param int $id_amenity
@@ -72,22 +73,34 @@ class Beranda extends CI_Controller
 	}
 
 	/**
-	 * Halaman restoran
+	 * Halaman Menu
 	 */
-	public function restaurant()
+	public function menu()
 	{
+
+		$this->load->model('Menu_model', 'menu');
+
 		$data = [
-			'title' => 'Restaurant',
-			'menus' => $this->Beranda_model->get_all_menus(),
-			'testimonials' => $this->Beranda_model->get_testimonials()
+			'title' => 'Menu | The Royal',
+			'categories' => $this->menu->get_menu_by_category(),
 		];
 
-		// Proses form booking meja
-		if ($this->input->post('book_table')) {
-			$this->_submit_booking();
-		}
-
-		$this->_load_template('restaurant', $data);
+		$this->_load_template('menu', $data);
+	}
+	// Order Menu
+	public function order_menu()
+	{
+		$data = [
+			'menu_name' => $this->input->post('menu_name'),
+			'price' => $this->input->post('price'),
+			'customer' => $this->input->post('customer'),
+			'room' => $this->input->post('room'),
+			'quantity' => $this->input->post('quantity'),
+			'note' => $this->input->post('note'),
+			'created_at' => date('Y-m-d H:i:s')
+		];
+		$this->db->insert('orders', $data);
+		echo json_encode(['status' => 'success', 'message' => 'Pesanan berhasil dikirim!']);
 	}
 
 	/**
@@ -248,7 +261,145 @@ class Beranda extends CI_Controller
 		$this->_load_template('our_hotel', $data);
 	}
 
+	public function booking()
+	{
+		// JIKA HANYA TAMPIL HALAMAN
+		$data['title'] = 'Booking';
+		$data['rooms'] = $this->db->get('rooms')->result();
+		$this->_load_template('booking', $data);
+	}
 
+	public function submit()
+	{
+		if ($this->input->method() === 'post') {
+
+			$arrival = $this->input->post('arrival_date');
+			$departure = $this->input->post('departure_date');
+
+			$arrivalDate   = new DateTime($arrival);
+			$departureDate = new DateTime($departure);
+
+			$nights = $arrivalDate->diff($departureDate)->days;
+
+			$room_id = $this->input->post('room_id');
+
+			$room = $this->Room_model->get_by_id($room_id);
+			$price_per_night = $room->price;
+
+			$total_price = $price_per_night * $nights;
+
+			if ($nights <= 0) {
+				$this->session->set_flashdata('error', 'Departure date harus lebih besar dari arrival date');
+				redirect('booking');
+			}
+
+			$isAvailable = $this->Booking_model->is_room_available(
+				$room_id,
+				$arrivalDate->format('Y-m-d'),
+				$departureDate->format('Y-m-d')
+			);
+
+			if (!$isAvailable) {
+				$this->session->set_flashdata(
+					'error',
+					'Maaf, tipe kamar ini sudah penuh di tanggal tersebut'
+				);
+				redirect('booking');
+			}
+
+			$insert = [
+				'full_name'       => $this->input->post('full_name', TRUE),
+				'email'           => $this->input->post('email', TRUE),
+				'phone'           => $this->input->post('phone', TRUE),
+				'mobile'          => $this->input->post('mobile', TRUE),
+				'city'            => $this->input->post('city', TRUE),
+				'country'         => $this->input->post('country', TRUE),
+				'adults'          => $this->input->post('adults', TRUE),
+				'children'        => $this->input->post('children', TRUE),
+				'arrival_date'    => !empty($arrival) ? date('Y-m-d', strtotime($arrival)) : NULL,
+				'departure_date'  => !empty($departure) ? date('Y-m-d', strtotime($departure)) : NULL,
+				'nights'         => $nights,
+				'message'         => $this->input->post('message', TRUE),
+				'room_id'         => $room_id,
+				'price_per_night' => $price_per_night,
+				'total_price'     => $total_price,
+				'invoice_number' => $this->generateInvoice(),
+				'status' => 'pending',
+				'created_at'      => date('Y-m-d H:i:s')
+			];
+			$invoice = $insert['invoice_number'];
+
+			$this->Booking_model->insert($insert);
+
+			$invoice = $this->db
+				->select('bookings.*, rooms.name AS room_name')
+				->from('bookings')
+				->join('rooms', 'rooms.id = bookings.room_id')
+				->where('invoice_number', $insert['invoice_number'])
+				->get()
+				->row();
+
+			$this->sendInvoiceEmail($invoice);
+
+
+			$this->session->set_flashdata('success', 'Booking berhasil dikirim');
+			redirect('booking');
+		}
+	}
+
+	private function generateInvoice()
+	{
+		return 'INV-' . date('Ymd') . '-' . strtoupper(substr(uniqid(), -5));
+	}
+
+	private function sendInvoiceEmail($invoice)
+	{
+		// LOAD EMAIL LIBRARY DENGAN CONFIG
+		$this->load->library('email');
+
+		// SET HEADER EMAIL (WAJIB)
+		$this->email->from('youngsta446@gmail.com', ' Royal Hotel Booking');
+		$this->email->to($invoice->email);
+		$this->email->subject('Invoice Booking - 	' . $invoice->invoice_number);
+
+		// BODY EMAIL
+		$message = $this->load->view('invoice', ['invoice' => $invoice], TRUE);
+
+		$this->email->message($message);
+
+		if (!$this->email->send()) {
+			log_message('error', $this->email->print_debugger());
+			return false;
+		}
+
+		return true;
+	}
+
+
+	public function invoice($invoice_number = null)
+	{
+		if (!$invoice_number) {
+			show_404();
+		}
+
+		$this->db->select('
+        bookings.*,
+        rooms.name AS room_name
+    ');
+		$this->db->from('bookings');
+		$this->db->join('rooms', 'rooms.id = bookings.room_id');
+		$this->db->where('bookings.invoice_number', $invoice_number);
+
+		$data['invoice'] = $this->db->get()->row();
+
+		if (!$data['invoice']) {
+			show_404();
+		}
+
+		$data['title'] = 'Invoice';
+
+		$this->_load_template('invoice', $data);
+	}
 
 	// Halaman galeri
 	public function gallery()
@@ -437,5 +588,58 @@ class Beranda extends CI_Controller
 		// Redirect atau tampilkan notifikasi sukses
 		$this->session->set_flashdata('success', 'Your message has been sent successfully!');
 		redirect('contact');
+	}
+
+
+
+
+	// Subscribe Footer
+	public function subscribe()
+	{
+		// redirect ke halaman asal (footer berada di semua halaman)
+		$redirect = $this->input->server('HTTP_REFERER') ?: site_url();
+
+		if ($this->input->method() !== 'post') {
+			show_404();
+		}
+
+		$this->form_validation->set_rules(
+			'email',
+			'Email',
+			'required|valid_email'
+		);
+
+		if ($this->form_validation->run() === FALSE) {
+			$this->session->set_flashdata(
+				'subscribe_error',
+				validation_errors()
+			);
+			redirect($redirect);
+		}
+
+		$email = $this->input->post('email', TRUE);
+
+		// cek email sudah terdaftar
+		if ($this->Subscriber_model->is_email_exist($email)) {
+			$this->session->set_flashdata(
+				'subscribe_error',
+				'Email sudah terdaftar.'
+			);
+			redirect($redirect);
+		}
+
+		// simpan ke database
+		$this->Subscriber_model->insert([
+			'email' => $email,
+			'status' => 'active',
+			'created_at' => date('Y-m-d H:i:s')
+		]);
+
+		$this->session->set_flashdata(
+			'subscribe_success',
+			'<strong>Terima kasih telah berlangganan!</strong>'
+		);
+
+		redirect($redirect);
 	}
 }

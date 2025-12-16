@@ -339,10 +339,10 @@ th {
 
 .hom-body-section:before {
     content: '';
-    position: fixed;
+    position: absolute;
     background: linear-gradient(to top, rgba(29, 31, 31, 0.7) 14%, rgba(0, 0, 0, 0.26) 66%);
     top: 0px;
-    bottom: 0px;
+    bottom: -175px;
     left: 0px;
     width: 100%;
 }
@@ -1174,7 +1174,6 @@ td {}
 /*-------------------------------------------------*/
 
 .inn-booking {
-    background: url(../images/slide2.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;
     width: 100%;
@@ -1800,49 +1799,329 @@ td {}
 }
 
 .res-menu {
-    position: relative;
-    overflow: hidden;
-    border-bottom: 1px solid #ece5d3;
-    margin-bottom: 15px;
-    margin: 15px;
-    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px 24px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    gap: 20px;
+    font-family: "Poppins", sans-serif;
 }
 
-.res-menu:hover.res-menu h3 span {
-    background: #dba714;
-    color: #fff;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
+/* Gambar kiri */
 .res-menu img {
-    float: left;
-    width: 55px;
-    margin-right: 25px;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.res-menu h3 span {
-    float: right;
-    font-size: 20px;
-    color: #dba714;
-    border: 1px solid #dba714;
-    padding: 3px;
-    border-radius: 2px;
-    font-family: 'Quicksand', sans-serif;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+/* Konten tengah */
+.menu-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
 }
 
-.res-menu h3 {
-    margin-top: 0px;
-    margin-bottom: 0px;
+.menu-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
 }
 
-.menu-item {}
+/* Harga ditampilkan sebagai badge pendek dan proporsional */
+.menu-price {
+    display: inline-block;
+    background: linear-gradient(135deg, #f7ce4a, #e3b93c);
+    color: #2a1d0e;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 4px 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(243, 193, 52, 0.4);
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.menu-item {
+    font-size: 1.2srem;
+    color: #555;
+    line-height: 1.5;
+    max-width: 95%;
+}
+
+/* Tombol kanan */
+.btn-order {
+    /* Ukuran dan Spasi */
+    display: inline-block;
+    padding: 6px 6px;
+
+    /* Warna dan Bentuk */
+    background-color: #cc9536;
+    /* Warna emas/coklat yang lebih solid */
+    color: #ffffff;
+    border: none;
+    /* Menghilangkan border hitam yang kaku */
+    border-radius: 8px;
+    /* Sudut sedikit membulat, tidak terlalu lonjong */
+
+    /* Tipografi */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    /* Efek Halus */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Bayangan yang lebih lembut */
+}
+
+/* Efek saat kursor di atas tombol */
+.btn-order:hover {
+    background-color: #bc8e3a;
+    /* Sedikit lebih gelap saat hover */
+    transform: translateY(-2px);
+    /* Tombol sedikit terangkat */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Efek saat tombol diklik */
+.btn-order:active {
+    transform: translateY(0);
+}
+
+/* Hover efek kartu */
+.res-menu:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .res-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .menu-content {
+        width: 100%;
+    }
+
+    .order-btn {
+        align-self: flex-start;
+        margin-top: 10px;
+    }
+}
+
+/* Modal Detail Menu */
+/* Modal overlay */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Kotak modal */
+.modal-content {
+    background: #fff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 450px;
+    padding: 25px 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideUp 0.4s ease;
+}
+
+/* Tombol close */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #999;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #222;
+}
+
+.modal h2 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.modal-desc {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* Menu Tabs Styling */
+.menu-tabs {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu-tabs .tab-link {
+    background: #fff;
+    border: 1px solid #d4a23f;
+    color: #222;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 25px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-tabs .tab-link:hover {
+    background: #d4a23f;
+    color: #fff;
+}
+
+.menu-tabs .tab-link.active {
+    background: #d4a23f;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(212, 162, 63, 0.3);
+}
+
+/* --- Efek animasi elegan untuk pergantian kategori --- */
+.category-section {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+.category-section.hide {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Fade-in pada item menu */
+.menu-item-box {
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Form styling */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+input,
+textarea {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #d4a23f;
+    box-shadow: 0 0 0 2px rgba(212, 162, 63, 0.2);
+}
+
+textarea {
+    resize: none;
+    min-height: 60px;
+}
+
+/* Tombol submit */
+.submit-btn {
+    background: linear-gradient(135deg, #d4a23f, #c38c2f);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #b8872f, #a37424);
+    transform: translateY(-2px);
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 /*-------------------------------------------------*/
 /* =  ALL HOTELS
@@ -5857,11 +6136,4 @@ li.active>a {
         width: 48px;
         height: 26px;
     }
-
-
-
-
-
-
-
 }
