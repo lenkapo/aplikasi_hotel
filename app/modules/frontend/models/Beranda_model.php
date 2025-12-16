@@ -157,10 +157,6 @@ class Beranda_model extends CI_Model
             ->result();
     }
 
-    /* ==========================================================
-   BAGIAN 4. EXTRA SERVICES (LAYANAN TAMBAHAN)
-   ========================================================== */
-
     public function get_all_extra_services()
     {
         return $this->db->order_by('harga', 'ASC')

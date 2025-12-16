@@ -24,7 +24,8 @@ class Beranda extends CI_Controller
 			'Hotel_model',
 			'Booking_model',
 			'Subscriber_model',
-			'Menu_model'
+			'Menu_model',
+			'Services_model'
 		]);
 		$this->load->helper(['url', 'form', 'text']);
 		$this->load->library(['session', 'form_validation']);
@@ -46,8 +47,6 @@ class Beranda extends CI_Controller
 			'title' => 'Beranda',
 
 		];
-
-
 		$this->_load_template('beranda', $data);
 	}
 	/**
@@ -72,19 +71,15 @@ class Beranda extends CI_Controller
 		$this->_load_template('facilities', $data);
 	}
 
-	/**
-	 * Halaman Menu
-	 */
+	/** Halaman Menu */
 	public function menu()
 	{
-
 		$this->load->model('Menu_model', 'menu');
 
 		$data = [
 			'title' => 'Menu | The Royal',
 			'categories' => $this->menu->get_menu_by_category(),
 		];
-
 		$this->_load_template('menu', $data);
 	}
 	// Order Menu
@@ -101,6 +96,32 @@ class Beranda extends CI_Controller
 		];
 		$this->db->insert('orders', $data);
 		echo json_encode(['status' => 'success', 'message' => 'Pesanan berhasil dikirim!']);
+	}
+
+	// Service 
+	public function services()
+	{
+		$this->load->model('Services_model', 'services');
+
+		$data = [
+			'title' => 'Service | The Royal',
+			'services' => $this->services->get_all(),
+		];
+
+		$this->_load_template('services', $data);
+	}
+	// Services Detail
+	public function service_detail($slug)
+	{
+		$this->load->model('Services_model', 'services');
+
+		$service = $this->services->get_by_slug($slug);
+		if (!$service) show_404();
+
+		$data['service'] = $service;
+		$data['title'] = $service->service_name;
+
+		$this->_load_template('services_detail', $data);
 	}
 
 	/**
@@ -186,29 +207,7 @@ class Beranda extends CI_Controller
 		}
 	}
 
-	/**
-	 * Detail kamar
-	 * @param int $id
-	 */
-	public function details($id = 1)
-	{
-		$room = $this->Beranda_model->get_room_detail($id);
-		if (!$room) {
-			show_404();
-		}
-
-		$room->gallery = $this->Beranda_model->get_room_gallery($id);
-
-		$data = [
-			'title' => "Detail Kamar: " . $room->name,
-			'room' => $room,
-			'room_price' => number_format($room->price, 2, '.', ','),
-			'amenities' => !empty($room->amenities) ? explode(',', $room->amenities) : []
-		];
-
-		$this->_load_template('room_detail', $data);
-	}
-
+	// Room
 	public function room()
 	{
 		$rooms = $this->Room_model->get_all_rooms();
@@ -261,14 +260,15 @@ class Beranda extends CI_Controller
 		$this->_load_template('our_hotel', $data);
 	}
 
+	// Halaman Booking //
 	public function booking()
 	{
-		// JIKA HANYA TAMPIL HALAMAN
 		$data['title'] = 'Booking';
 		$data['rooms'] = $this->db->get('rooms')->result();
 		$this->_load_template('booking', $data);
 	}
 
+	// Proses Submit Booking //
 	public function submit()
 	{
 		if ($this->input->method() === 'post') {
@@ -346,36 +346,7 @@ class Beranda extends CI_Controller
 			redirect('booking');
 		}
 	}
-
-	private function generateInvoice()
-	{
-		return 'INV-' . date('Ymd') . '-' . strtoupper(substr(uniqid(), -5));
-	}
-
-	private function sendInvoiceEmail($invoice)
-	{
-		// LOAD EMAIL LIBRARY DENGAN CONFIG
-		$this->load->library('email');
-
-		// SET HEADER EMAIL (WAJIB)
-		$this->email->from('youngsta446@gmail.com', ' Royal Hotel Booking');
-		$this->email->to($invoice->email);
-		$this->email->subject('Invoice Booking - 	' . $invoice->invoice_number);
-
-		// BODY EMAIL
-		$message = $this->load->view('invoice', ['invoice' => $invoice], TRUE);
-
-		$this->email->message($message);
-
-		if (!$this->email->send()) {
-			log_message('error', $this->email->print_debugger());
-			return false;
-		}
-
-		return true;
-	}
-
-
+	// Halaman Invoice //
 	public function invoice($invoice_number = null)
 	{
 		if (!$invoice_number) {
@@ -507,16 +478,6 @@ class Beranda extends CI_Controller
 		redirect('blog_detail/' . $this->input->post('slug'), 'refresh');
 	}
 
-	/**
-	 * Helper untuk memuat template (header + footer)
-	 */
-	private function _load_template($view, $data = [])
-	{
-		$this->load->view('frontend/header', $data);
-		$this->load->view($view, $data);
-		$this->load->view('frontend/footer');
-	}
-
 	public function search()
 	{
 		$checkin   = $this->input->get('checkin');
@@ -585,18 +546,14 @@ class Beranda extends CI_Controller
 
 		$this->db->insert('contact_messages', $data);
 
-		// Redirect atau tampilkan notifikasi sukses
 		$this->session->set_flashdata('success', 'Your message has been sent successfully!');
 		redirect('contact');
 	}
-
-
-
-
-	// Subscribe Footer
+	/** SUBSCRIBES
+	 * Fnnction subscribe di halaman footer
+	 */
 	public function subscribe()
 	{
-		// redirect ke halaman asal (footer berada di semua halaman)
 		$redirect = $this->input->server('HTTP_REFERER') ?: site_url();
 
 		if ($this->input->method() !== 'post') {
@@ -627,19 +584,64 @@ class Beranda extends CI_Controller
 			);
 			redirect($redirect);
 		}
-
-		// simpan ke database
 		$this->Subscriber_model->insert([
 			'email' => $email,
 			'status' => 'active',
 			'created_at' => date('Y-m-d H:i:s')
 		]);
-
 		$this->session->set_flashdata(
 			'subscribe_success',
 			'<strong>Terima kasih telah berlangganan!</strong>'
 		);
 
 		redirect($redirect);
+	}
+
+	// =========================================================================================================== //
+	// 		                                      PRIVATE FUNCTION                                                 //
+	// ============================================================================================================//
+
+	/**
+	 * Helper untuk kirim Email (header + footer)
+	 */
+	private function sendInvoiceEmail($invoice)
+	{
+		// LOAD EMAIL LIBRARY DENGAN CONFIG
+		$this->load->library('email');
+
+		// SET HEADER EMAIL (WAJIB)
+		$this->email->from('youngsta446@gmail.com', ' Royal Hotel Booking');
+		$this->email->to($invoice->email);
+		$this->email->subject('Invoice Booking - 	' . $invoice->invoice_number);
+
+		// BODY EMAIL
+		$message = $this->load->view('invoice', ['invoice' => $invoice], TRUE);
+
+		$this->email->message($message);
+
+		if (!$this->email->send()) {
+			log_message('error', $this->email->print_debugger());
+			return false;
+		}
+
+		return true;
+	}
+	// Generate Invoice Otomatis //
+	private function generateInvoice()
+	{
+		return 'INV-' . date('Ymd') . '-' . strtoupper(substr(uniqid(), -5));
+	}
+
+
+
+
+	/**
+	 * Helper untuk memuat template (header + footer)
+	 */
+	private function _load_template($view, $data = [])
+	{
+		$this->load->view('frontend/header', $data);
+		$this->load->view($view, $data);
+		$this->load->view('frontend/footer');
 	}
 }

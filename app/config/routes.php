@@ -57,6 +57,10 @@ $route['gallery'] = 'frontend/Beranda/gallery';
 // Menu
 $route['menu'] = 'frontend/Beranda/menu';
 
+// Service
+$route['services'] = 'frontend/Beranda/services';
+$route['services_detail/(:any)'] = 'frontend/Beranda/service_detail/$1';
+
 
 $route['blog'] = 'frontend/Beranda/blog';
 

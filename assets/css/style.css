@@ -193,7 +193,7 @@ th {
 /*-------------------------------------------------*/
 
 .main {
-    background: url('assets/images/slider/5.jpg') no-repeat;
+    background: url(../images/slider/5.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -1991,12 +1991,12 @@ td {}
 
 .menu-tabs .tab-link {
     background: #fff;
-    border: 1px solid #d4a23f;
-    color: #222;
+    border: 0px solid #d4a23f;
+    color: #d4a23f;
     font-weight: 500;
     padding: 8px 18px;
-    border-radius: 25px;
-    margin: 5px;
+    border-radius: 1px;
+    margin: 1px;
     cursor: pointer;
     transition: 0.3s;
 }
