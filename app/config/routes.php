@@ -61,7 +61,11 @@ $route['menu'] = 'frontend/Beranda/menu';
 $route['services'] = 'frontend/Beranda/services';
 $route['services_detail/(:any)'] = 'frontend/Beranda/service_detail/$1';
 
+// About Us //
+$route['about'] = 'frontend/Beranda/about';
 
+// Contact Us //
+$route['contact'] = 'frontend/Beranda/contact';
 $route['blog'] = 'frontend/Beranda/blog';
 
 $route['our_hotel'] = 'frontend/Beranda/ourhotel';
@@ -70,7 +74,6 @@ $route['booking'] = 'frontend/Beranda/booking';
 $route['beranda/submit'] = 'frontend/beranda/submit';
 $route['invoice'] = 'frontend/beranda/invoice';
 
-$route['tentang_kami'] = 'frontend/Beranda/tentangkami';
 $route['contact'] = 'frontend/Beranda/contact';
 $route['blog_detail/(:any)'] = 'frontend/Beranda/blog_detail/$1';
 $route['facilities/(:any)'] = 'frontend/Beranda/facilities/$1';

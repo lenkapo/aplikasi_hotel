@@ -249,9 +249,24 @@ th {
     color: #888;
     font-size: 12px;
     border-right: 1px solid #474747;
-    padding: 0px 10px;
+    padding: 5px 10px;
     text-transform: initial;
     font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    /* Transisi halus untuk semua perubahan */
+}
+
+/* Menghilangkan garis vertikal pada item terakhir agar rapi */
+.top-bar ul li:last-child a {
+    border-right: none;
+}
+
+/* Efek saat kursor menempel ATAU saat menu sedang aktif */
+.top-bar ul li a:hover,
+.top-bar ul li.active a {
+    color: #ffffff;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.6);
 }
 
 .top-bar ul li a img {
@@ -294,11 +309,69 @@ th {
 .menu-bar ul li a {
     color: #cbcbcb;
     font-size: 13px;
-    padding: 10px 15px;
-    /* text-transform: uppercase; */
-
     font-weight: 600;
     font-family: 'Quicksand', sans-serif;
+}
+
+/* Container navigasi utama */
+.menu-bar {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    /* Mengatur menu ke kanan */
+    margin: 0;
+    padding: 0;
+}
+
+.menu-bar li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.menu-bar li a {
+    position: relative;
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+/* Membuat garis bawah yang mulai dari tengah (lebar awal 0) */
+.menu-bar li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: #f4364f;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+/* --- EFEK HOVER (Saat kursor menyentuh menu) --- */
+.menu-bar li a:hover {
+    color: #b8b8b8;
+}
+
+.menu-bar li a:hover::after {
+    width: 100%;
+    /* Garis memanjang dari tengah ke samping */
+}
+
+/* --- EFEK ACTIVE (Halaman yang sedang dibuka) --- */
+.menu-bar li.active>a {
+    color: #d1d1d1;
+    font-weight: 600;
+}
+
+.menu-bar li.active>a::after {
+    width: 100%;
+    /* Garis tetap penuh di halaman aktif */
+    box-shadow: 0px 0px 8px rgba(244, 54, 79, 0.5);
+    /* Garis ikut menyala */
 }
 
 .mm-1 ul li a {
@@ -339,10 +412,10 @@ th {
 
 .hom-body-section:before {
     content: '';
-    position: absolute;
+    position: fixed;
     background: linear-gradient(to top, rgba(29, 31, 31, 0.7) 14%, rgba(0, 0, 0, 0.26) 66%);
     top: 0px;
-    bottom: -175px;
+    bottom: 0px;
     left: 0px;
     width: 100%;
 }
@@ -4533,6 +4606,11 @@ footer ul li a {
     font-family: 'Quicksand', sans-serif;
 }
 
+.about-left a:hover {
+    background: #ff0022;
+    color: #fff;
+}
+
 .about-right {}
 
 .about-right img {
@@ -4627,16 +4705,82 @@ footer ul li a {
 /*-------------------------------------------------------*/
 /*  CONTACT PAGE
 /*-------------------------------------------------------*/
-.contact-map {}
+.contact-map {
+    box-shadow: 0px 0px 15px rgba(244, 54, 79, 0.2);
+    /* Glow halus di area map */
+}
 
 .contact-map iframe {
     width: 100%;
     height: 550px;
-    border: 0px;
-    margin-bottom: -5px;
+    border: 0;
     display: block;
-    pointer-events: none;
-    position: relative;
+    filter: grayscale(50%);
+    /* Sedikit pudar agar terlihat elegan */
+    transition: filter 0.3s ease;
+}
+
+.contact-map:hover iframe {
+    filter: grayscale(0%);
+    /* Warna asli muncul saat kursor masuk */
+}
+
+/* Container Utama */
+.contact-section {
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+/* Mengatur Baris agar Rapi */
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Agar responsif di HP */
+    align-items: stretch;
+    /* Membuat tinggi peta dan info sama rata */
+    gap: 0;
+    /* Ubah ke 20px jika ingin ada jarak antar kotak */
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    /* Memastikan sudut tumpul memotong isi */
+}
+
+/* Sisi Peta */
+.contact-map {
+    flex: 1;
+    /* Mengambil ruang fleksibel */
+    min-width: 300px;
+    /* Minimal lebar di layar kecil */
+    line-height: 0;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    /* Mengikuti tinggi container row */
+    min-height: 450px;
+    border: none;
+    filter: grayscale(20%);
+    transition: 0.3s;
+}
+
+/* Sisi Informasi (Jika Anda menambahkan teks di samping peta) */
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    background: #ffffff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Efek Hover Peta */
+.contact-map:hover iframe {
+    filter: grayscale(0%);
 }
 
 .new-con img {
@@ -5795,11 +5939,7 @@ form .stars label:before {
 
 
 /* custom css */
-li.active>a {
-    color: #f4364f;
-    font-weight: 600;
-    border-bottom: 2px solid #f4364f;
-}
+
 
 .deal-popup {
     position: fixed;

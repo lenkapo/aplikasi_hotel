@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2025 at 10:35 AM
+-- Generation Time: Dec 17, 2025 at 12:04 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -223,7 +223,7 @@ CREATE TABLE `alus_u` (
 --
 
 INSERT INTO `alus_u` (`id`, `username`, `job_title`, `abc`, `ip_address`, `ghi`, `def`, `mno`, `jkl`, `stu`, `pqr`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `ht`, `picture`, `mdo_id`, `mos_id`, `grup_type`, `bpd_id`, `bpd_id_2`, `staff_pmk_id`) VALUES
-(64, 'admins', 'admins', 'MTIzNDU2Nzg5MDEyMzQ1Nvqvv5U+5Kixew57njDPeg==', '::1', '$2y$08$GgyrrdcJTxV0YIu5On5qoell7OztL8kp1tdlpkoWstcqKZNp1IaZS', 'xEfWFClsAdO4BnNm', '', NULL, 1764865143, '', 1469523580, 1765683447, 1, 'Super', 'Admin', '', '085697362948', 0, '1496118042.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
+(64, 'admins', 'admins', 'MTIzNDU2Nzg5MDEyMzQ1Nvqvv5U+5Kixew57njDPeg==', '::1', '$2y$08$GgyrrdcJTxV0YIu5On5qoell7OztL8kp1tdlpkoWstcqKZNp1IaZS', 'xEfWFClsAdO4BnNm', '', NULL, 1764865143, '', 1469523580, 1765968664, 1, 'Super', 'Admin', '', '085697362948', 0, '1496118042.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
 (65, 'BAGIAN PERLENGKAPAN', 'BAGIAN PERLENGKAPAN', 'MTIzNDU2Nzg5MDEyMzQ1NsGuoJM/yqy8eAN68DTNdlID3W0pjA==', '::1', '$2y$08$JoKZ4fv6BkH5WTWLwW9IfulZAbwPRhawSu5/basXlOukNzemXJuqS', 'Ih49EoG2nF0Zt38O', NULL, NULL, NULL, NULL, 1542868077, 1550670091, 1, 'BAGIAN PERLENGKAPAN', NULL, NULL, '0', 0, 'avatar_default.png', NULL, 1, NULL, NULL, NULL, NULL),
 (66, 'DINAS PENDIDIKAN', 'DINAS PENDIDIKAN', 'MTIzNDU2Nzg5MDEyMzQ1Nv2quZ4/3a+0fSdy3TLJexUMnGM=', '::1', '$2y$08$VUKn/N/Oz3h/8IB7somj3ODzqJ3cGYVnLbUw/QESB9MVhCV.zeInG', 'Qoc9aAIiYkGjg9IZ', NULL, NULL, NULL, NULL, 1542868087, 1550991198, 1, 'DINAS PENDIDIKAN', '', NULL, '0', 0, 'avatar_default.png', NULL, 2, NULL, NULL, NULL, NULL),
 (67, 'KECAMATAN KAYAN HULU', 'KECAMATAN KAYAN HULU', 'MTIzNDU2Nzg5MDEyMzQ1Nva5/Iwiy6i5IlBV1z7BfldBkGEr', '::1', '$2y$08$amSFXmE4w705SSYY562IM.wr5fvtERPp7sXIFyi04MgZVY2rEhMXS', 'rrptJbn3YVDGJGOF', NULL, NULL, NULL, NULL, 1542868107, 1549440969, 1, 'KECAMATAN KAYAN HULU', NULL, NULL, '0', 0, 'avatar_default.png', NULL, 3, NULL, NULL, NULL, NULL),
@@ -350,6 +350,64 @@ INSERT INTO `banners` (`id`, `title`, `image`, `is_active`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE `bookings` (
+  `id` int(11) NOT NULL,
+  `room_id` int(11) DEFAULT NULL,
+  `full_name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  `mobile` varchar(50) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `adults` int(11) DEFAULT NULL,
+  `children` int(11) DEFAULT NULL,
+  `arrival_date` date DEFAULT NULL,
+  `departure_date` date DEFAULT NULL,
+  `nights` int(11) DEFAULT NULL,
+  `status` enum('pending','confirmed','cancelled') DEFAULT 'pending',
+  `price_per_night` int(11) DEFAULT NULL,
+  `total_price` int(11) DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `invoice_number` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`id`, `room_id`, `full_name`, `email`, `phone`, `mobile`, `city`, `country`, `adults`, `children`, `arrival_date`, `departure_date`, `nights`, `status`, `price_per_night`, `total_price`, `message`, `created_at`, `invoice_number`) VALUES
+(1, 1, 'ujeng', 'youngsta446@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 1, '0000-00-00', '0000-00-00', NULL, 'pending', NULL, NULL, 'nginep', '2025-12-16 04:08:58', NULL),
+(2, 1, 'ujeng', 'youngsta446@gmail.com', '08569362948', '085697362948', 'bogor', 'indonesia', 3, 3, '2025-12-23', '2025-12-23', NULL, 'pending', NULL, NULL, 'nginep', '2025-12-16 04:17:46', NULL),
+(3, 2, 'likeu', 'likeu@gmail.com', '123', '123', 'bogor', 'indonesia', 1, 0, '2025-12-16', '2025-12-17', 1, 'pending', NULL, NULL, 'test', '2025-12-16 04:37:04', NULL),
+(4, 2, 'test', 'test@gmail.com', 'test', 'test', 'test', 'test', 2, 2, '2025-12-16', '2025-12-17', 1, 'pending', NULL, NULL, 'test', '2025-12-16 04:38:50', NULL),
+(5, 1, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 150000, 150000, 'mau nginep', '2025-12-16 05:22:57', NULL),
+(6, 1, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 150000, 150000, 'mau nginep', '2025-12-16 05:33:16', 'INV-20251216-7152D'),
+(7, 1, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 150000, 150000, 'mau nginep', '2025-12-16 05:33:22', 'INV-20251216-25600'),
+(8, 1, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 150000, 150000, 'mau nginep', '2025-12-16 05:33:26', 'INV-20251216-66EC9'),
+(9, 1, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 150000, 150000, 'mau nginep', '2025-12-16 05:33:58', 'INV-20251216-0DD52'),
+(10, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:02:16', 'INV-20251216-C6328'),
+(11, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:06:21', 'INV-20251216-510FD'),
+(12, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:06:22', 'INV-20251216-D0457'),
+(13, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:06:26', 'INV-20251216-EAB32'),
+(14, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:09:37', 'INV-20251216-A3425'),
+(15, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:11:29', 'INV-20251216-9A9BA'),
+(16, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:11:39', 'INV-20251216-4978E'),
+(17, 2, 'binzzu', 'binzzugt123@gmail.com', '085697362948', '085697362948', 'BOGOR', 'INDONESIA', 1, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'BOOKING', '2025-12-16 07:12:33', 'INV-20251216-97A0A'),
+(18, 2, 'binzzu', 'binzzugt123@gmail.com', '085697362948', '085697362948', 'BOGOR', 'INDONESIA', 1, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'BOOKING', '2025-12-16 07:19:15', 'INV-20251216-ED72C'),
+(19, 2, 'binzzu', 'binzzugt123@gmail.com', '085697362948', '085697362948', 'BOGOR', 'INDONESIA', 1, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'BOOKING', '2025-12-16 07:20:43', 'INV-20251216-02117'),
+(20, 2, 'binzzu', 'binzzugt123@gmail.com', '085697362948', '085697362948', 'BOGOR', 'INDONESIA', 1, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'BOOKING', '2025-12-16 07:22:49', 'INV-20251216-329A3'),
+(21, 2, 'binzzu', 'binzzugt123@gmail.com', '085697362948', '085697362948', 'BOGOR', 'INDONESIA', 1, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'BOOKING', '2025-12-16 07:22:52', 'INV-20251216-8A277'),
+(22, 2, 'binzzu', 'binzzugt123@gmail.com', '085697362948', '085697362948', 'BOGOR', 'INDONESIA', 1, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'BOOKING', '2025-12-16 07:23:53', 'INV-20251216-35317'),
+(23, 2, 'binzzu', 'binzzugt123@gmail.com', '085697362948', '085697362948', 'BOGOR', 'INDONESIA', 1, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'BOOKING', '2025-12-16 07:24:56', 'INV-20251216-A37EC'),
+(24, 2, 'Dewi', 'binzzugt123@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 1, 0, '2025-12-18', '2025-12-19', 1, 'pending', 4000, 4000, 'bebas rokok', '2025-12-17 04:23:01', 'INV-20251217-78F41');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categories`
 --
 
@@ -423,6 +481,33 @@ CREATE TABLE `contact_messages` (
 
 INSERT INTO `contact_messages` (`id`, `name`, `email`, `subject`, `message`, `created_at`) VALUES
 (1, 'ujeng', 'youngsta446@gmail.com', 'test', 'test', '2025-12-14 10:28:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daftar_hotel`
+--
+
+CREATE TABLE `daftar_hotel` (
+  `id` int(11) NOT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `is_featured` tinyint(1) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `daftar_hotel`
+--
+
+INSERT INTO `daftar_hotel` (`id`, `country`, `city`, `address`, `image`, `is_featured`, `created_at`) VALUES
+(1, 'United States', 'Farmington Hills', '28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A', '1.jpg', 1, '2025-12-15 13:12:07'),
+(2, 'United Kingdom', 'London', 'Farmington Hills, London', '2.jpg', 0, '2025-12-15 13:12:07'),
+(3, 'Australia', 'Melbourne', 'Farmington Hills, Melbourne', '3.jpg', 0, '2025-12-15 13:12:07'),
+(4, 'Germany', 'Germany', 'Farmington Hills, Germany', '4.jpg', 0, '2025-12-15 13:12:07'),
+(5, 'India', 'Chennai', 'Farmington Hills, Chennai', '5.jpg', 0, '2025-12-15 13:12:07');
 
 -- --------------------------------------------------------
 
@@ -572,6 +657,40 @@ INSERT INTO `gallery_kamar` (`id`, `id_kamar`, `image_path`, `caption`, `is_acti
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `menu`
+--
+
+CREATE TABLE `menu` (
+  `id` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `nama_menu` varchar(150) NOT NULL,
+  `deskripsi` text DEFAULT NULL,
+  `harga` int(11) NOT NULL,
+  `gambar` varchar(255) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`id`, `id_kategori`, `nama_menu`, `deskripsi`, `harga`, `gambar`, `is_active`) VALUES
+(1, 1, 'Grilled Salmon Steak', 'Ayam panggang saus teriyaki, nasi hangat, dan salad Jepang.', 50000, '1.jpg', 1),
+(2, 1, 'Chicken Teriyaki Bowl', 'Ayam panggang saus teriyaki, nasi hangat, dan salad Jepang.', 38000, '2.jpg', 1),
+(3, 1, 'Beef Tenderloin Steak', 'Daging sapi premium dengan saus lada hitam dan kentang goreng.', 60000, '3.jpg', 1),
+(4, 1, 'Seafood Platter', 'Udang, cumi, dan ikan goreng tepung dengan saus tartar.', 55000, '4.jpg', 1),
+(5, 2, 'Paneer Butter Masala', 'Potongan paneer lembut dalam saus tomat krim berbumbu.', 30000, '9.jpg', 1),
+(6, 2, 'Vegetable Biryani', 'Nasi rempah dengan sayuran segar dan yoghurt mint.', 28000, '10.jpg', 1),
+(7, 2, 'Greek Salad', 'Salad segar dengan keju feta, tomat, zaitun, dan dressing lemon.', 20000, '12.jpg', 1),
+(8, 2, 'Mushroom Soup', 'Sup jamur creamy dengan roti panggang renyah.', 18000, '11.jpg', 1),
+(9, 3, 'Fresh Orange Juice', 'Jus jeruk segar tanpa gula tambahan.', 8000, 'drink1.jpg', 1),
+(10, 3, 'Iced Coffee Latte', 'Kopi arabika premium dengan susu segar dan es batu.', 10000, 'drink2.jpg', 1),
+(11, 3, 'Chocolate Lava Cake', 'Kue cokelat hangat dengan lelehan cokelat di dalamnya.', 12000, 'dessert1.jpg', 1),
+(12, 3, 'Cheesecake Blueberry', 'Kue lembut dengan topping blueberry segar.', 15000, 'dessert2.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `menus`
 --
 
@@ -598,6 +717,43 @@ INSERT INTO `menus` (`id`, `category`, `name`, `description`, `price`, `image`, 
 (4, 'Lunch', 'Lubina Marinada', 'Aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.', '15.00', 'lubina_marinada.jpg', 1, '2025-11-30 00:41:28', NULL),
 (5, 'Lunch', 'Nashville Hot Chicken', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.', '30.00', 'nashville_hot.jpg', 1, '2025-11-30 00:41:28', NULL),
 (6, 'Lunch', 'Biscuits and Gravy', 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.', '55.00', 'biscuits_gravy.jpg', 1, '2025-11-30 00:41:28', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu_category`
+--
+
+CREATE TABLE `menu_category` (
+  `id` int(11) NOT NULL,
+  `nama_kategori` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `menu_category`
+--
+
+INSERT INTO `menu_category` (`id`, `nama_kategori`) VALUES
+(1, 'Non Veg'),
+(2, 'Veg'),
+(3, 'Drinks & Desserts');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `menu_name` varchar(150) NOT NULL,
+  `price` varchar(50) NOT NULL,
+  `customer` varchar(100) NOT NULL,
+  `room` varchar(50) DEFAULT NULL,
+  `quantity` int(11) NOT NULL DEFAULT 1,
+  `note` text DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -847,6 +1003,7 @@ CREATE TABLE `rooms` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `price` decimal(10,2) NOT NULL,
+  `total_room` int(11) DEFAULT 1,
   `old_price` decimal(10,2) DEFAULT NULL,
   `max_adult` int(3) NOT NULL,
   `max_child` int(3) NOT NULL,
@@ -863,9 +1020,9 @@ CREATE TABLE `rooms` (
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`id`, `name`, `price`, `old_price`, `max_adult`, `max_child`, `rating`, `main_image`, `deskripsi`, `status`, `tag`, `promo_start`, `promo_end`) VALUES
-(1, 'Master Suite', '150000.00', '165000.00', 3, 1, '4.5', '1.jpg', 'Kamar mewah dengan fasilitas lengkap', 6, 'Featured', '2025-12-14', '2025-12-14'),
-(2, 'Mini Suite', '4000.00', '4500.00', 2, 1, '4.2', '2.jpg', 'Kamar nyaman untuk keluarga kecil', 1, 'special', '2025-12-15', '2025-12-15');
+INSERT INTO `rooms` (`id`, `name`, `price`, `total_room`, `old_price`, `max_adult`, `max_child`, `rating`, `main_image`, `deskripsi`, `status`, `tag`, `promo_start`, `promo_end`) VALUES
+(1, 'Master Suite', '150000.00', 5, '165000.00', 3, 1, '4.5', '1.jpg', 'Kamar mewah dengan fasilitas lengkap', 6, 'Featured', '2025-12-14', '2025-12-14'),
+(2, 'Mini Suite', '4000.00', 20, '4500.00', 2, 1, '4.2', '2.jpg', 'Kamar nyaman untuk keluarga kecil', 1, 'special', '2025-12-15', '2025-12-15');
 
 -- --------------------------------------------------------
 
@@ -893,6 +1050,56 @@ INSERT INTO `room_features` (`id`, `room_id`, `feature_id`) VALUES
 (7, 2, 2),
 (8, 2, 3),
 (9, 1, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` int(11) NOT NULL,
+  `service_name` varchar(150) NOT NULL,
+  `slug` varchar(150) NOT NULL,
+  `short_description` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `icon` varchar(100) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `status` enum('active','inactive') DEFAULT 'active',
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `service_name`, `slug`, `short_description`, `description`, `icon`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Restaurant Service', 'restaurant-service', 'High quality restaurant service', 'We provide the best restaurant service with delicious food, comfortable place, and friendly staff.', 'fa fa-cutlery', '7.jpg', 'active', '2025-12-16 23:59:02', '2025-12-17 00:11:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscribers`
+--
+
+CREATE TABLE `subscribers` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `status` enum('active','inactive') DEFAULT 'active',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subscribers`
+--
+
+INSERT INTO `subscribers` (`id`, `email`, `status`, `created_at`) VALUES
+(1, 'youngsta446@gmail.com', 'active', '2025-12-16 05:24:03'),
+(2, 'binzzugt123@gmail.com', 'active', '2025-12-16 05:25:00'),
+(3, 'youngsta466@gmail.com', 'active', '2025-12-16 05:30:25'),
+(4, 'ujeng@gmail.com', 'active', '2025-12-16 05:32:14'),
+(5, 'binzzugt1233@gmail.com', 'active', '2025-12-16 05:47:16');
 
 -- --------------------------------------------------------
 
@@ -1199,6 +1406,12 @@ ALTER TABLE `banners`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -1217,6 +1430,12 @@ ALTER TABLE `comments`
 -- Indexes for table `contact_messages`
 --
 ALTER TABLE `contact_messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `daftar_hotel`
+--
+ALTER TABLE `daftar_hotel`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1261,9 +1480,28 @@ ALTER TABLE `gallery_kamar`
   ADD KEY `id_kamar` (`id_kamar`);
 
 --
+-- Indexes for table `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_kategori` (`id_kategori`);
+
+--
 -- Indexes for table `menus`
 --
 ALTER TABLE `menus`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu_category`
+--
+ALTER TABLE `menu_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1323,6 +1561,19 @@ ALTER TABLE `room_features`
   ADD PRIMARY KEY (`id`),
   ADD KEY `room_id` (`room_id`),
   ADD KEY `feature_id` (`feature_id`);
+
+--
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `sys_codes`
@@ -1421,6 +1672,12 @@ ALTER TABLE `banners`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -1437,6 +1694,12 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `contact_messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `daftar_hotel`
+--
+ALTER TABLE `daftar_hotel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `detail_reservasi`
@@ -1475,10 +1738,28 @@ ALTER TABLE `gallery_kamar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `menu_category`
+--
+ALTER TABLE `menu_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -1529,6 +1810,18 @@ ALTER TABLE `room_features`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `sys_codes`
 --
 ALTER TABLE `sys_codes`
@@ -1576,11 +1869,10 @@ ALTER TABLE `alus_ug`
   ADD CONSTRAINT `alus_ug_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `alus_u` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
--- Constraints for table `detail_reservasi`
+-- Constraints for table `menu`
 --
-ALTER TABLE `detail_reservasi`
-  ADD CONSTRAINT `detail_reservasi_ibfk_1` FOREIGN KEY (`id_reservasi`) REFERENCES `reservasi` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_detail_tipe_kamar` FOREIGN KEY (`id_tipe_kamar`) REFERENCES `tipe_kamar` (`id`);
+ALTER TABLE `menu`
+  ADD CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `menu_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `room_features`

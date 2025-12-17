@@ -47,7 +47,7 @@
                             <a href="<?= base_url('room') ?>">Room</a>
                         </li>
                         <li class="<?= ($this->uri->segment(1) == 'services') ? 'active' : '' ?>">
-                            <a href="<?= base_url('services') ?>">Services</a>
+                            <a href="<?= base_url('services') ?>">Service</a>
                         </li>
                         <li class="<?= ($this->uri->segment(1) == 'menu') ? 'active' : '' ?>">
                             <a href="<?= base_url('menu') ?>">Menu</a>
@@ -76,7 +76,7 @@
                     hingga daging pilihan berkualitas tinggi yang dipanggang <br> dengan sempurna untuk memanjakan lidah Anda.
                 <p>
                 <ul>
-                    <li><a href="#">Home</a>
+                    <li><a href="<?= base_url() ?>">Home</a>
                     </li>
                     <li><a href="#">Menu</a>
                     </li>
