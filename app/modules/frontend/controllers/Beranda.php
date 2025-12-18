@@ -363,6 +363,180 @@ class Beranda extends CI_Controller
 		redirect($redirect);
 	}
 
+	// Halaman Event //
+	public function event()
+	{
+		$this->load->model('Event_model', 'event');
+
+		$data = [
+			'title' => 'Event',
+			'events' => $this->event->get_all()
+		];
+
+		$this->_load_template('event', $data);
+	}
+
+	// Halaman Event Detail //
+	public function event_detail($slug)
+	{
+		$this->load->model('Event_model', 'event');
+		$event = $this->event->get_by_slug($slug);
+
+		if (!$event) {
+			show_404();
+		}
+
+		$data = [
+			'title' => $slug,
+			'event' => $event,
+			'sisa_quota' => $this->event->sisa_quota($event->id)
+		];
+
+		$this->_load_template('event_detail', $data);
+	}
+
+	//  Event Register //
+	public function register_event($event_id)
+	{
+		$this->load->model('Event_model', 'event');
+		$this->load->database();
+
+		$event = $this->db
+			->where('id', $event_id)
+			->where('status', 'active')
+			->get('events')
+			->row();
+
+		if (!$event) {
+			show_404();
+		}
+
+		// CEK KUOTA
+		if ($this->event->sisa_quota($event_id) <= 0) {
+			show_error('Kuota sudah penuh');
+		}
+
+		if ($this->input->post()) {
+
+			// CEK DOUBLE REGISTER
+			$exists = $this->db->get_where('event_registrations', [
+				'event_id' => $event_id,
+				'email'    => $this->input->post('email', TRUE)
+			])->row();
+
+			if ($exists) {
+				$this->session->set_flashdata('error', 'Email sudah terdaftar');
+				redirect(site_url('event/' . $event->slug));
+			}
+
+			// TRANSAKSI (ANTI RACE CONDITION)
+			$this->db->trans_start();
+
+			$this->db->insert('event_registrations', [
+				'event_id' => $event_id,
+				'name'     => $this->input->post('name', TRUE),
+				'email'    => $this->input->post('email', TRUE),
+				'phone'    => $this->input->post('phone', TRUE)
+			]);
+
+			$this->db->trans_complete();
+
+			if ($this->db->trans_status() === FALSE) {
+				show_error('Gagal melakukan registrasi');
+			}
+
+			$this->session->set_flashdata('success', 'Registrasi berhasil!');
+			redirect(site_url('event_detail/' . $event->slug));
+		}
+
+		$this->load->library('email');
+
+		// EMAIL KE PESERTA
+		$this->email->from('youngsta446@gmail.com', 'Event Organizer');
+		$this->email->to($this->input->post('email', TRUE));
+		$this->email->subject('Konfirmasi Pendaftaran Event');
+
+		$message = $this->load->view('register_success', [
+			'event' => $event,
+			'name'  => $this->input->post('name', TRUE)
+		], TRUE);
+
+		$this->email->message($message);
+		$this->email->send();
+
+		// EMAIL KE ADMIN
+		$this->email->clear();
+
+		$this->email->from('youngsta446@gmail.com', 'Event Website');
+		$this->email->to('veldora.drg@gmail.com');
+		$this->email->subject('Pendaftar Baru Event');
+
+		$admin_msg = $this->load->view('register_admin', [
+			'event' => $event,
+			'name'  => $this->input->post('name', TRUE),
+			'email' => $this->input->post('email', TRUE),
+			'phone' => $this->input->post('phone', TRUE)
+		], TRUE);
+
+		$this->email->message($admin_msg);
+		$this->email->send();
+
+		if (!$this->email->send()) {
+			log_message('error', $this->email->print_debugger());
+		}
+
+		$data['event'] = $event;
+
+		$this->_load_template('register_event', $data);
+		$this->load->library('email');
+		$this->load->config('email');
+		$this->email->initialize($this->config->item('email'));
+
+		// EMAIL PESERTA
+		$this->email->from('youngsta446@gmail.com', 'Event Organizer');
+		$this->email->to($this->input->post('email', TRUE));
+		$this->email->subject('Konfirmasi Pendaftaran Event');
+
+		$message = $this->load->view('emails/register_success', [
+			'event' => $event,
+			'name'  => $this->input->post('name', TRUE)
+		], TRUE);
+
+		$this->email->message($message);
+
+		if (!$this->email->send()) {
+			log_message('error', $this->email->print_debugger());
+		}
+
+		// EMAIL ADMIN
+		$this->email->clear();
+
+		$this->email->from('youngsta446@gmail.com', 'Event Website');
+		$this->email->to('veldora.drg@gmail.com');
+		$this->email->subject('Pendaftar Baru Event');
+
+		$admin_msg = $this->load->view('emails/register_admin', [
+			'event' => $event,
+			'name'  => $this->input->post('name', TRUE),
+			'email' => $this->input->post('email', TRUE),
+			'phone' => $this->input->post('phone', TRUE)
+		], TRUE);
+
+		$this->email->message($admin_msg);
+		$this->email->send();
+
+		/* ======================================== */
+
+		$this->session->set_flashdata('success', 'Registrasi berhasil!');
+		redirect(site_url('event/' . $event->slug));
+	}
+
+
+
+
+
+
+
 	// =========================================================================================================== //
 	// 		                                      PRIVATE FUNCTION                                                 //
 	// ============================================================================================================//

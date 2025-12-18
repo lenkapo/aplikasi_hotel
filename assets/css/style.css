@@ -6349,4 +6349,16 @@ form .stars label:before {
         width: 48px;
         height: 26px;
     }
+
+    .event-regi {
+        background: #e53935;
+        color: #fff;
+        padding: 10px 15px;
+        text-decoration: none;
+    }
+
+    .event-regi:hover {
+        background: #c62828;
+        color: #fff;
+    }
 }

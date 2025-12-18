@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2025 at 11:54 AM
+-- Generation Time: Dec 19, 2025 at 12:43 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -223,7 +223,7 @@ CREATE TABLE `alus_u` (
 --
 
 INSERT INTO `alus_u` (`id`, `username`, `job_title`, `abc`, `ip_address`, `ghi`, `def`, `mno`, `jkl`, `stu`, `pqr`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `ht`, `picture`, `mdo_id`, `mos_id`, `grup_type`, `bpd_id`, `bpd_id_2`, `staff_pmk_id`) VALUES
-(64, 'admins', 'admins', 'MTIzNDU2Nzg5MDEyMzQ1Nvqvv5U+5Kixew57njDPeg==', '::1', '$2y$08$GgyrrdcJTxV0YIu5On5qoell7OztL8kp1tdlpkoWstcqKZNp1IaZS', 'xEfWFClsAdO4BnNm', '', NULL, 1764865143, '', 1469523580, 1765968664, 1, 'Super', 'Admin', '', '085697362948', 0, '1496118042.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
+(64, 'admins', 'admins', 'MTIzNDU2Nzg5MDEyMzQ1Nvqvv5U+5Kixew57njDPeg==', '::1', '$2y$08$GgyrrdcJTxV0YIu5On5qoell7OztL8kp1tdlpkoWstcqKZNp1IaZS', 'xEfWFClsAdO4BnNm', '', NULL, 1764865143, '', 1469523580, 1766063740, 1, 'Super', 'Admin', '', '085697362948', 0, '1496118042.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
 (65, 'BAGIAN PERLENGKAPAN', 'BAGIAN PERLENGKAPAN', 'MTIzNDU2Nzg5MDEyMzQ1NsGuoJM/yqy8eAN68DTNdlID3W0pjA==', '::1', '$2y$08$JoKZ4fv6BkH5WTWLwW9IfulZAbwPRhawSu5/basXlOukNzemXJuqS', 'Ih49EoG2nF0Zt38O', NULL, NULL, NULL, NULL, 1542868077, 1550670091, 1, 'BAGIAN PERLENGKAPAN', NULL, NULL, '0', 0, 'avatar_default.png', NULL, 1, NULL, NULL, NULL, NULL),
 (66, 'DINAS PENDIDIKAN', 'DINAS PENDIDIKAN', 'MTIzNDU2Nzg5MDEyMzQ1Nv2quZ4/3a+0fSdy3TLJexUMnGM=', '::1', '$2y$08$VUKn/N/Oz3h/8IB7somj3ODzqJ3cGYVnLbUw/QESB9MVhCV.zeInG', 'Qoc9aAIiYkGjg9IZ', NULL, NULL, NULL, NULL, 1542868087, 1550991198, 1, 'DINAS PENDIDIKAN', '', NULL, '0', 0, 'avatar_default.png', NULL, 2, NULL, NULL, NULL, NULL),
 (67, 'KECAMATAN KAYAN HULU', 'KECAMATAN KAYAN HULU', 'MTIzNDU2Nzg5MDEyMzQ1Nva5/Iwiy6i5IlBV1z7BfldBkGEr', '::1', '$2y$08$amSFXmE4w705SSYY562IM.wr5fvtERPp7sXIFyi04MgZVY2rEhMXS', 'rrptJbn3YVDGJGOF', NULL, NULL, NULL, NULL, 1542868107, 1549440969, 1, 'KECAMATAN KAYAN HULU', NULL, NULL, '0', 0, 'avatar_default.png', NULL, 3, NULL, NULL, NULL, NULL),
@@ -524,6 +524,58 @@ CREATE TABLE `detail_reservasi` (
   `jumlah_anak` int(3) DEFAULT 0,
   `harga_saat_reservasi` decimal(12,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `title` varchar(150) NOT NULL,
+  `slug` varchar(160) NOT NULL,
+  `description` text NOT NULL,
+  `event_date` date NOT NULL,
+  `end_date` date DEFAULT NULL,
+  `quota` int(11) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `location` varchar(150) DEFAULT NULL,
+  `status` enum('active','inactive') DEFAULT 'active',
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `title`, `slug`, `description`, `event_date`, `end_date`, `quota`, `image`, `location`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Food factory', 'food-factory', 'Many desktop publishing packages and web page editors now use Lorem Ipsum.', '2017-12-09', NULL, 10, '2.jpg', 'Jakarta', 'active', '2025-12-18 20:44:22', '2025-12-18 21:12:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event_registrations`
+--
+
+CREATE TABLE `event_registrations` (
+  `id` int(11) NOT NULL,
+  `event_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `event_registrations`
+--
+
+INSERT INTO `event_registrations` (`id`, `event_id`, `name`, `email`, `phone`, `created_at`) VALUES
+(1, 1, 'test', 'luqmanaly666@gmail.com', '085697362948', '2025-12-18 21:29:35'),
+(3, 1, 'Ujeng', 'youngsta446@gmail.com', '085697362948', '2025-12-18 21:36:09'),
+(4, 1, 'Likeu Garlita', 'pusatgadailikeu@gmail.com', '08118562134', '2025-12-18 23:30:27');
 
 -- --------------------------------------------------------
 
@@ -1448,6 +1500,20 @@ ALTER TABLE `detail_reservasi`
   ADD KEY `fk_detail_tipe_kamar` (`id_tipe_kamar`);
 
 --
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uq_slug` (`slug`);
+
+--
+-- Indexes for table `event_registrations`
+--
+ALTER TABLE `event_registrations`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uniq_event_email` (`event_id`,`email`);
+
+--
 -- Indexes for table `extra_services`
 --
 ALTER TABLE `extra_services`
@@ -1709,6 +1775,18 @@ ALTER TABLE `detail_reservasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `event_registrations`
+--
+ALTER TABLE `event_registrations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `extra_services`
 --
 ALTER TABLE `extra_services`
@@ -1868,6 +1946,12 @@ ALTER TABLE `users`
 ALTER TABLE `alus_ug`
   ADD CONSTRAINT `alus_ug_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `alus_g` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `alus_ug_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `alus_u` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `event_registrations`
+--
+ALTER TABLE `event_registrations`
+  ADD CONSTRAINT `event_registrations_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `menu`

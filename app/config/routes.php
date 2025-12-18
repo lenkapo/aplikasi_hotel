@@ -74,7 +74,12 @@ $route['booking'] = 'frontend/Beranda/booking';
 $route['beranda/submit'] = 'frontend/beranda/submit';
 $route['invoice'] = 'frontend/beranda/invoice';
 
-$route['contact'] = 'frontend/Beranda/contact';
+//  Event  //
+$route['event'] = 'frontend/Beranda/event';
+$route['event_detail/(:any)'] = 'frontend/Beranda/event_detail/$1';
+$route['register_event/(:num)'] = 'frontend/Beranda/register_event/$1';
+
+
 $route['blog_detail/(:any)'] = 'frontend/Beranda/blog_detail/$1';
 $route['facilities/(:any)'] = 'frontend/Beranda/facilities/$1';
 $route['room_detail/(:num)'] = 'frontend/Beranda/details/$1';
