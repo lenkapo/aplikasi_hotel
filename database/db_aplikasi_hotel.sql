@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2025 at 12:04 PM
+-- Generation Time: Dec 18, 2025 at 12:58 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -1063,6 +1063,7 @@ CREATE TABLE `services` (
   `slug` varchar(150) NOT NULL,
   `short_description` text DEFAULT NULL,
   `description` text DEFAULT NULL,
+  `cta` varchar(255) NOT NULL,
   `icon` varchar(100) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `status` enum('active','inactive') DEFAULT 'active',
@@ -1074,8 +1075,8 @@ CREATE TABLE `services` (
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`id`, `service_name`, `slug`, `short_description`, `description`, `icon`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Restaurant Service', 'restaurant-service', 'High quality restaurant service', 'We provide the best restaurant service with delicious food, comfortable place, and friendly staff.', 'fa fa-cutlery', '7.jpg', 'active', '2025-12-16 23:59:02', '2025-12-17 00:11:33');
+INSERT INTO `services` (`id`, `service_name`, `slug`, `short_description`, `description`, `cta`, `icon`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Restaurant Service', 'restaurant-service', '\"Kehangatan Rumah di Setiap Hidangan yang Kami Sajikan\"', 'Mencari tempat makan yang nyaman setelah lelah beraktivitas seharian? Masuklah ke restoran kami dan biarkan kami memanjakan Anda. Layanan hotel kami hadir dengan satu filosofi sederhana: memperlakukan setiap tamu seperti keluarga sendiri.\n\nMenu kami adalah perpaduan antara kelezatan tradisional dan sentuhan modern, dimasak dengan cinta untuk menghadirkan rasa yang akrab namun tetap istimewa. Ruangan kami yang luas dan nyaman sangat cocok untuk Anda yang ingin bersantai tanpa gangguan, ditemani oleh staf ramah yang selalu siap membantu dengan senyuman.\n\nKami mengundang Anda untuk duduk, rileks, dan menikmati sajian terbaik yang kami siapkan khusus untuk Anda hari ini. Karena bagi kami, kepuasan Anda adalah kebanggaan terbesar kami.', 'Butuh bantuan atau ingin memesan tempat? Klik \"Tanya Lebih Lanjut\" sekarang, kami siap membantu Anda!', 'fa fa-cutlery', 'le-gran-cafe_standard.jpg', 'active', '2025-12-16 23:59:02', '2025-12-17 22:29:57');
 
 -- --------------------------------------------------------
 

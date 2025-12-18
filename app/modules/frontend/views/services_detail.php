@@ -1,3 +1,72 @@
+<style>
+    /* Container Utama */
+    .hotel-meta-bar {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+        border-top: 0px solid #ececec;
+        border-bottom: 0px solid #ececec;
+        margin-bottom: 0px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Item Meta (Ikon + Teks) */
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        /* Jarak antara ikon dan teks */
+    }
+
+    /* Warna Ikon Layanan (Merah) */
+    .icon-service {
+        color: #dc3545;
+        font-size: 13px;
+    }
+
+    /* Warna Ikon Kalender (Biru) */
+    .icon-calendar {
+        color: #007bff;
+        font-size: 12px;
+    }
+
+    /* Styling Teks Label */
+    .label-text {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333333;
+    }
+
+    /* Styling Teks Tanggal */
+    .date-text {
+        font-size: 14px;
+        color: #777777;
+        font-weight: 400;
+    }
+
+    /* Garis Pemisah Vertikal */
+    .meta-divider {
+        width: 2px;
+        height: 18px;
+        background-color: #dddddd;
+        margin: 0 10px;
+        /* Jarak kiri-kanan garis pemisah */
+    }
+
+    /* Responsif untuk layar kecil (Mobile) */
+    @media (max-width: 480px) {
+        .hotel-meta-bar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .meta-divider {
+            display: none;
+            /* Hilangkan garis pemisah di mobile */
+        }
+    }
+</style>
 <section>
     <div class="menu-section">
         <div class="container">
@@ -45,7 +114,7 @@
                         <li class="<?= ($this->uri->segment(1) == 'room') ? 'active' : '' ?>">
                             <a href="<?= base_url('room') ?>">Room</a>
                         </li>
-                        <li class="<?= ($this->uri->segment(1) == 'services') ? 'active' : '' ?>">
+                        <li class="<?= ($this->uri->segment(1) == 'services_detail') ? 'active' : '' ?>">
                             <a href="<?= base_url('services') ?>">Service</a>
                         </li>
                         <li class="<?= ($this->uri->segment(1) == 'menu') ? 'active' : '' ?>">
@@ -67,7 +136,7 @@
     <div class="inn-banner">
         <div class="container">
             <div class="row">
-                <h4>About Us</h4>
+                <h4>Services</h4>
                 <p>Curabitur auctor, massa sed interdum ornare, nulla sem vestibulum purus, eu maximus magna urna eu nunc.</p>
                 <p> </p>
                 <ul>
@@ -100,27 +169,34 @@
                             <?php endif; ?>
                         </div>
 
-                        <h1 class="fw-bold mb-3 mt-2" style="color: #2c3e50;"><?= $service->service_name; ?></h1>
+                        <h2 class="fw-bold mb-3 mt-2" style="color: #2c3e50; margin-bottom:1px;"><?= $service->service_name; ?></h2>
 
-                        <div class="d-flex align-items-center mb-4 py-2 border-top border-bottom text-muted">
-                            <div class="me-4">
-                                <i class="<?= $service->icon; ?> text-danger me-2"></i>
-                                <span class="fw-medium">Layanan Hotel</span>
+                        <div class="hotel-meta-bar" style="border: 0;border-top: 2px solid #eee; margin-top: 10px; ">
+                            <div class="meta-item">
+                                <i class="<?= $service->icon; ?> icon-service"></i>
+                                <span class="label-text">Layanan Hotel</span>
                             </div>
-                            <div>
-                                <i class="fa fa-calendar-alt text-primary me-2"></i>
-                                <span><?= date('F d, Y', strtotime($service->created_at)); ?></span>
+
+                            <div class="meta-divider"></div>
+
+                            <div class="meta-item">
+                                <i class="fa fa-calendar-alt icon-calendar"></i>
+                                <span class="date-text"><?= date('F d, Y', strtotime($service->created_at)); ?></span>
                             </div>
                         </div>
+                        <div class="service-description" style="border: 0;border-top: 2px solid #eee;">
+                            <h4 style="margin-top: 15px; margin-bottom:10px;"><?= $service->short_description ?></h4>
+                        </div>
 
-                        <div class="service-description text-secondary" style="line-height: 1.8; text-align: justify;">
+                        <div class="service-description text-secondary" style="line-height: 1.8; text-align: justify; font-size: 12px;">
                             <?= nl2br($service->description); ?>
                         </div>
+                        <hr>
+                        <div class="service-description text-secondary" style="line-height: 1.8; text-align: justify; font-size:12px;">
+                            <?= nl2br($service->cta); ?>
+                        </div>
 
-                        <div class="mt-5">
-                            <a href="javascript:history.back()" class="btn btn-outline-secondary rounded-pill px-4 me-2">
-                                <i class="fa fa-arrow-left me-2"></i>Kembali
-                            </a>
+                        <div class="mt-5" style="margin-top: 10px;">
                             <a href="<?= base_url('contact'); ?>" class="btn btn-danger rounded-pill px-4 shadow-sm">
                                 Tanya Lebih Lanjut
                             </a>
@@ -128,6 +204,37 @@
                     </div>
                 </div>
 
+                <div class="col-md-4">
+                    <div class="bot-gal h-gal">
+                        <h4>Gallery Restaurant</h4>
+                        <ul>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/8.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/9.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/10.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/11.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/1.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/2.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/3.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/4.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/5.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/6.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/7.jpg') ?>" alt="">
+                            </li>
+                            <li><img class="materialboxed" data-caption="Hotel Captions" src="<?= base_url('assets/images/ami/8.jpg') ?>" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="col-lg-4 mt-4 mt-lg-0">
                     <div class="p-4 bg-white rounded-4 shadow-sm">
                         <h5 class="fw-bold border-bottom pb-3 mb-3">Layanan Kami Lainnya</h5>

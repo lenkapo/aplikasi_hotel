@@ -52,7 +52,8 @@
 	</section>
 	<!--TOP SECTION-->
 	<section class="main">
-		<div class="menu-section">
+
+		<div class="menu-section-blank">
 			<div class="container">
 				<div class="row">
 					<div class="top-bar">
@@ -377,6 +378,52 @@
 					alertBox.style.display = 'none';
 				}
 			}, 3000); // 3 detik
+
+			window.addEventListener('scroll', function() {
+				const navbar = document.querySelector('.menu-section-blank');
+
+				// Memberikan class 'active-scroll' saat halaman digeser lebih dari 50px
+				if (window.scrollY > 50) {
+					navbar.classList.add('active-scroll');
+				} else {
+					navbar.classList.remove('active-scroll');
+				}
+			});
+
+			const menu = document.querySelector('.menu-bar');
+			const items = document.querySelectorAll('.menu-bar li');
+			const indicator = document.querySelector('.indicator');
+
+			function moveIndicator(el) {
+				const rect = el.getBoundingClientRect();
+				const menuRect = menu.getBoundingClientRect();
+
+				// Set lebar dan posisi indicator sesuai elemen yang dipilih
+				indicator.style.width = `${rect.width}px`;
+				indicator.style.left = `${rect.left - menuRect.left}px`;
+			}
+
+			// Set posisi awal pada menu yang memiliki class .active
+			const activeItem = document.querySelector('.menu-bar li.active');
+			if (activeItem) moveIndicator(activeItem);
+
+			items.forEach(item => {
+				item.addEventListener('mouseenter', (e) => {
+					moveIndicator(e.target);
+					// Ubah warna teks link lain jadi abu-abu saat hover
+				});
+
+				item.addEventListener('click', () => {
+					items.forEach(i => i.classList.remove('active'));
+					item.classList.add('active');
+				});
+			});
+
+			// Kembalikan ke menu aktif saat kursor meninggalkan area menu bar
+			menu.addEventListener('mouseleave', () => {
+				const currentActive = document.querySelector('.menu-bar li.active');
+				moveIndicator(currentActive);
+			});
 		</script>
 
 </body>

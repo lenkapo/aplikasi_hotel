@@ -283,6 +283,58 @@ th {
     top: 0px;
 }
 
+
+/* Keadaan Awal (Transparan / Blank) */
+.menu-section-blank {
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.52);
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    /* Benar-benar transparan */
+    padding: 10px 0;
+    /* Padding lebih longgar di awal */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Keadaan Saat Scroll (Muncul Latar Belakang) */
+.menu-section-blank.active-scroll {
+    background-color: rgba(26, 29, 36, 0.9);
+    /* Warna gelap dengan transparansi sedikit */
+    backdrop-filter: blur(12px);
+    /* Efek glassmorphism */
+    padding: 10px 0;
+    /* Padding mengecil agar lebih compact */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling Menu di Dalamnya (Gaya Softpill) */
+.menu-bar li a {
+    color: #d1d1d1;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 3px 12px;
+    /* Padding Seimbang sesuai permintaan */
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Softpill yang Menyatu */
+.menu-bar li a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Background tipis saat hover */
+}
+
+/* Indikator Active Page */
+.menu-bar li.active a {
+    color: #ffffff;
+    background-color: rgba(5, 1, 2, 0.2);
+    /* Merah soft untuk menu aktif */
+    font-weight: 600;
+}
+
 .logo {
     float: left;
     width: 20%;
@@ -299,7 +351,7 @@ th {
     padding: 0px;
     margin-bottom: 0px;
     float: right;
-    margin-top: 12px;
+    margin-top: 0px;
 }
 
 .menu-bar ul li {
@@ -313,65 +365,52 @@ th {
     font-family: 'Quicksand', sans-serif;
 }
 
-/* Container navigasi utama */
+/* Container navigasi */
 .menu-bar {
+    position: relative;
+    /* Penting sebagai patokan indicator */
     list-style: none;
     display: flex;
     justify-content: flex-end;
-    /* Mengatur menu ke kanan */
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    padding: 10px;
+    background: #2a2b3300;
+    /* Contoh background gelap */
+    border-radius: 1px;
 }
 
 .menu-bar li {
-    display: inline-block;
-    margin-left: 20px;
+    position: relative;
+    z-index: 2;
+    /* Supaya teks berada di atas indicator */
 }
 
 .menu-bar li a {
-    position: relative;
-    color: #888;
+    color: #a0a0a0;
     text-decoration: none;
     font-size: 14px;
-    font-family: 'Quicksand', sans-serif;
-    padding: 10px 0;
-    transition: all 0.3s ease;
+    padding: 8px 18px;
+    display: inline-block;
+    transition: color 0.3s;
 }
 
-/* Membuat garis bawah yang mulai dari tengah (lebar awal 0) */
-.menu-bar li a::after {
-    content: '';
+/* Style untuk Kapsul yang Meluncur */
+.indicator {
     position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 50%;
+    height: 35px;
+    /* Sesuaikan dengan tinggi link */
     background-color: #f4364f;
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
+    border-radius: 1px;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 4px 12px rgba(244, 54, 79, 0.3);
+    pointer-events: none;
+    /* Agar tidak menghalangi klik pada link */
 }
 
-/* --- EFEK HOVER (Saat kursor menyentuh menu) --- */
-.menu-bar li a:hover {
-    color: #b8b8b8;
-}
-
-.menu-bar li a:hover::after {
-    width: 100%;
-    /* Garis memanjang dari tengah ke samping */
-}
-
-/* --- EFEK ACTIVE (Halaman yang sedang dibuka) --- */
-.menu-bar li.active>a {
-    color: #d1d1d1;
+.menu-bar li.active a {
+    color: #fff;
     font-weight: 600;
-}
-
-.menu-bar li.active>a::after {
-    width: 100%;
-    /* Garis tetap penuh di halaman aktif */
-    box-shadow: 0px 0px 8px rgba(244, 54, 79, 0.5);
-    /* Garis ikut menyala */
 }
 
 .mm-1 ul li a {
@@ -1366,10 +1405,10 @@ td {}
 }
 
 .in-blog span {
-    font-size: 14px;
-    margin-right: 10px;
+    font-size: 11px;
+    margin-right: 0px;
     color: #919191;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     display: inline-block;
 }
 
@@ -4350,11 +4389,11 @@ a.ui-button:active,
 .bot-gal h4 {
     margin-top: 0px;
     border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 14px;
+    padding-bottom: 3px;
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .bot-gal h5 {
