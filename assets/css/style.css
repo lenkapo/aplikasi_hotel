@@ -281,6 +281,7 @@ th {
     width: 100%;
     z-index: 999;
     top: 0px;
+    border-bottom: 2px solid #665448;
 }
 
 
@@ -295,7 +296,8 @@ th {
     /* Benar-benar transparan */
     padding: 10px 0;
     /* Padding lebih longgar di awal */
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 2px solid transparent;
 }
 
 /* Keadaan Saat Scroll (Muncul Latar Belakang) */
@@ -307,6 +309,7 @@ th {
     padding: 10px 0;
     /* Padding mengecil agar lebih compact */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #665448;
 }
 
 /* Styling Menu di Dalamnya (Gaya Softpill) */
@@ -314,7 +317,7 @@ th {
     color: #d1d1d1;
     font-size: 14px;
     font-family: 'Quicksand', sans-serif;
-    padding: 3px 12px;
+    padding: 18px 18px;
     /* Padding Seimbang sesuai permintaan */
     border-radius: 1px;
     transition: all 0.3s ease;
@@ -323,14 +326,15 @@ th {
 /* Hover Softpill yang Menyatu */
 .menu-bar li a:hover {
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
+    background: #7e645400;
+    ;
     /* Background tipis saat hover */
 }
 
 /* Indikator Active Page */
 .menu-bar li.active a {
     color: #ffffff;
-    background-color: rgba(5, 1, 2, 0.2);
+    background: #7e645400;
     /* Merah soft untuk menu aktif */
     font-weight: 600;
 }
@@ -356,6 +360,7 @@ th {
 
 .menu-bar ul li {
     display: inline-block;
+    margin: 0 -2px;
 }
 
 .menu-bar ul li a {
@@ -377,6 +382,7 @@ th {
     background: #2a2b3300;
     /* Contoh background gelap */
     border-radius: 1px;
+    margin-bottom: -20px;
 }
 
 .menu-bar li {
@@ -389,7 +395,7 @@ th {
     color: #a0a0a0;
     text-decoration: none;
     font-size: 14px;
-    padding: 8px 18px;
+    padding: 14px 18px;
     display: inline-block;
     transition: color 0.3s;
 }
@@ -411,6 +417,34 @@ th {
 .menu-bar li.active a {
     color: #fff;
     font-weight: 600;
+}
+
+.menu-bar ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: #c0780cab;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Saat hover */
+.menu-bar ul li:hover::after {
+    width: 100%;
+}
+
+/* Saat aktif */
+.menu-bar ul li.active::after {
+    width: 100%;
+}
+
+/* Ubah warna teks saat hover/aktif */
+.menu-bar ul li:hover a,
+.menu-bar ul li.active a {
+    color: #ffffff;
 }
 
 .mm-1 ul li a {

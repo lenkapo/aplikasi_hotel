@@ -71,21 +71,6 @@
 							</li>
 						</ul>
 					</div>
-					<div class="all-drop-down">
-						<!-- Dropdown Structure -->
-						<ul id='dropdown2' class='dropdown-content drop-con-man'>
-							<li><a href="#!">English</a>
-							</li>
-							<li><a href="#!">Spanish</a>
-							</li>
-							<li><a href="#!">Hindi</a>
-							</li>
-							<li><a href="#!">Russian</a>
-							</li>
-							<li><a href="#!">Portuguese</a>
-							</li>
-						</ul>
-					</div>
 				</div>
 				<div class="row">
 					<div class="logo">
@@ -94,7 +79,7 @@
 					</div>
 					<div class="menu-bar">
 						<ul>
-							<li class="<?= ($this->uri->segment(1) == '') ? 'active' : '' ?>">
+							<li class="<?= ($this->uri->segment(1) == '') ? '' : '' ?>">
 								<a href="<?= base_url() ?>">Home</a>
 							</li>
 							<li class="<?= ($this->uri->segment(1) == 'room') ? 'active' : '' ?>">
