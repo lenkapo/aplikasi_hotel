@@ -57,4 +57,28 @@ class Event_model extends CI_Model
 
         return $this->db->query($sql, [$event_id])->row()->sisa ?? 0;
     }
+
+    public function get_upcoming($today, $month = null, $year = null)
+    {
+        $this->db->where('event_date >=', $today);
+
+        if ($month && $year) {
+            $this->db->where('MONTH(event_date)', $month);
+            $this->db->where('YEAR(event_date)', $year);
+        }
+
+        return $this->db->order_by('event_date', 'ASC')->get('events')->result();
+    }
+
+    public function get_past($today, $month = null, $year = null)
+    {
+        $this->db->where('event_date <', $today);
+
+        if ($month && $year) {
+            $this->db->where('MONTH(event_date)', $month);
+            $this->db->where('YEAR(event_date)', $year);
+        }
+
+        return $this->db->order_by('event_date', 'DESC')->get('events')->result();
+    }
 }

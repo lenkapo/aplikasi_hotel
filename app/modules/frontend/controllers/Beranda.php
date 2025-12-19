@@ -86,6 +86,7 @@ class Beranda extends CI_Controller
 
 		$this->_load_template('services', $data);
 	}
+
 	// Services Detail
 	public function service_detail($slug)
 	{
@@ -99,6 +100,7 @@ class Beranda extends CI_Controller
 
 		$this->_load_template('services_detail', $data);
 	}
+
 	// Room //
 	public function room()
 	{
@@ -143,6 +145,7 @@ class Beranda extends CI_Controller
 		$this->_load_template('room', $data);
 	}
 
+	// Halaman Our Hotel //
 	public function ourhotel()
 	{
 		$data['title'] = 'Our Hotels';
@@ -181,7 +184,7 @@ class Beranda extends CI_Controller
 			$total_price = $price_per_night * $nights;
 
 			if ($nights <= 0) {
-				$this->session->set_flashdata('error', 'Departure date harus lebih besar dari arrival date');
+				$this->session->set_flashdata('error', 'Check Out date harus lebih besar dari arrival date');
 				redirect('booking');
 			}
 
@@ -238,7 +241,8 @@ class Beranda extends CI_Controller
 			redirect('booking');
 		}
 	}
-	// Halaman Invoice //
+
+	// Halaman Invoice Booking //
 	public function invoice($invoice_number = null)
 	{
 		if (!$invoice_number) {
@@ -273,7 +277,8 @@ class Beranda extends CI_Controller
 		];
 		$this->_load_template('gallery', $data);
 	}
-	// ABOUT US //
+
+	// Halaman about Us //
 	public function about()
 	{
 		$data = [
@@ -368,9 +373,16 @@ class Beranda extends CI_Controller
 	{
 		$this->load->model('Event_model', 'event');
 
+		$today = date('Y-m-d');
+		$month = $this->input->get('month');
+		$year  = $this->input->get('year');
+
 		$data = [
-			'title' => 'Event',
-			'events' => $this->event->get_all()
+			'title'    => 'Event',
+			'month'    => $month,
+			'year'     => $year,
+			'upcoming' => $this->event->get_upcoming($today, $month, $year),
+			'past'     => $this->event->get_past($today, $month, $year),
 		];
 
 		$this->_load_template('event', $data);
