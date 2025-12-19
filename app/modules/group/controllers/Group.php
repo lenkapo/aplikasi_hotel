@@ -60,47 +60,86 @@ class Group extends CI_Controller
 
 	public function save_hak_akses()
 	{
+		// cek privilege
 		if ($this->privilege['can_edit'] == 0) {
-			echo json_encode(array("status" => FALSE, "msg" => "You Dont Have Permission"));
-		} else {
-			$this->form_validation->set_rules('bot[]', 'Menu', 'required');
-			if ($this->form_validation->run() == true) {
-				$id_group = $this->input->post('id_group');
-				$mlist = $this->input->post('bot');
-				$result = array();
-				$i = 0;
-				$sum = 0;
-				foreach ($mlist as $key => $val) {
-					if ($val) {
-						//delete hak sebelumnya clear all 
-						$this->model->del_ga($id_group);
-						//buat baru
-						$result[] = array(
-							"id_group" 	 => $id_group,
-							"id_menu" 	 => $_POST['menu'][$val],
-							"can_view" 	 => $_POST['canview'][$val],
-							"can_edit" 	 => $_POST['canedit'][$val],
-							"can_add" 	 => $_POST['canadd'][$val],
-							"can_delete" => $_POST['candelete'][$val],
-							"psv" 		 => date('Y-m-d H:i:s', strtotime($_POST['psv'][$val])),
-							"pev" 		 => date('Y-m-d H:i:s', strtotime($_POST['pev'][$val])),
-							"psed" 		 => date('Y-m-d H:i:s', strtotime($_POST['psed'][$val])),
-							"peed" 		 => date('Y-m-d H:i:s', strtotime($_POST['peed'][$val]))
-						);
-					}
-				}
+			echo json_encode([
+				"status" => FALSE,
+				"msg"    => "You Dont Have Permission"
+			]);
+			return;
+		}
 
-				$a = $this->model->upres($result);
-				if ($a) {
-					echo json_encode(array("status" => TRUE));
-				} else {
-					echo json_encode(array("status" => FALSE, "msg" => "Gagal update hak akses !"));
-				}
-			} else {
-				echo json_encode(array("status" => FALSE, "msg" => "ERROR[ID NOT FOUND]"));
+		$id_group = $this->input->post('id_group');
+		$bot      = $this->input->post('bot');
+
+		// validasi manual (lebih stabil untuk array)
+		if (empty($id_group) || empty($bot)) {
+			echo json_encode([
+				"status" => FALSE,
+				"msg"    => "Group atau menu belum dipilih"
+			]);
+			return;
+		}
+
+		// ambil semua input array
+		$menu      = $this->input->post('menu');
+		$canview   = $this->input->post('canview');
+		$canedit   = $this->input->post('canedit');
+		$canadd    = $this->input->post('canadd');
+		$candelete = $this->input->post('candelete');
+		$psv       = $this->input->post('psv');
+		$pev       = $this->input->post('pev');
+		$psed      = $this->input->post('psed');
+		$peed      = $this->input->post('peed');
+
+		$data_insert = [];
+
+		foreach ($bot as $idx) {
+
+			if (!isset($menu[$idx])) {
+				continue;
 			}
+
+			$data_insert[] = [
+				'id_group'   => $id_group,
+				'id_menu'    => $menu[$idx],
+				'can_view'   => isset($canview[$idx])   ? $canview[$idx]   : 0,
+				'can_edit'   => isset($canedit[$idx])   ? $canedit[$idx]   : 0,
+				'can_add'    => isset($canadd[$idx])    ? $canadd[$idx]    : 0,
+				'can_delete' => isset($candelete[$idx]) ? $candelete[$idx] : 0,
+				'psv'  => !empty($psv[$idx])  ? date('Y-m-d H:i:s', strtotime($psv[$idx]))  : NULL,
+				'pev'  => !empty($pev[$idx])  ? date('Y-m-d H:i:s', strtotime($pev[$idx]))  : NULL,
+				'psed' => !empty($psed[$idx]) ? date('Y-m-d H:i:s', strtotime($psed[$idx])) : NULL,
+				'peed' => !empty($peed[$idx]) ? date('Y-m-d H:i:s', strtotime($peed[$idx])) : NULL,
+			];
+		}
+
+		// mulai transaction
+		$this->db->trans_begin();
+
+		// hapus hak akses lama (sekali saja)
+		$this->model->del_ga($id_group);
+
+		// insert baru
+		if (!empty($data_insert)) {
+			$this->model->upres($data_insert);
+		}
+
+		// cek hasil transaction
+		if ($this->db->trans_status() === FALSE) {
+			$this->db->trans_rollback();
+			echo json_encode([
+				"status" => FALSE,
+				"msg"    => "Gagal update hak akses"
+			]);
+		} else {
+			$this->db->trans_commit();
+			echo json_encode([
+				"status" => TRUE
+			]);
 		}
 	}
+
 	/* SERVER SIDE */
 	/* Server Side Data */
 	/* Modified by : Maulana.code@gmail.com */
