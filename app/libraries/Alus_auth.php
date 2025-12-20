@@ -1,28 +1,28 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 /**
-* Name:  Ion Auth
-*
-* Version: 2.5.2
-*
-* Author: Ben Edmunds
-*		  ben.edmunds@gmail.com
-*         @benedmunds
-*
-* Added Awesomeness: Phil Sturgeon
-*
-* Location: http://github.com/benedmunds/CodeIgniter-Ion-Auth
-*
-* Created:  10.01.2009
-*
-* Description:  Modified auth system based on redux_auth with extensive customization.  This is basically what Redux Auth 2 should be.
-* Original Author name has been kept but that does not mean that the method has not been modified.
-*
-* Requirements: PHP5 or above
-*
-*/
-
+ * Name:  Ion Auth
+ *
+ * Version: 2.5.2
+ *
+ * Author: Ben Edmunds
+ *		  ben.edmunds@gmail.com
+ *         @benedmunds
+ *
+ * Added Awesomeness: Phil Sturgeon
+ *
+ * Location: http://github.com/benedmunds/CodeIgniter-Ion-Auth
+ *
+ * Created:  10.01.2009
+ *
+ * Description:  Modified auth system based on redux_auth with extensive customization.  This is basically what Redux Auth 2 should be.
+ * Original Author name has been kept but that does not mean that the method has not been modified.
+ *
+ * Requirements: PHP5 or above
+ *
+ */
 class Alus_auth
 {
+	protected $CI;
 	/**
 	 * account status ('not_activated', etc ...)
 	 *
@@ -59,27 +59,27 @@ class Alus_auth
 	 **/
 	public function __construct()
 	{
+		$this->CI = get_instance();
+
 		$this->load->config('alus_auth', TRUE);
 		$this->load->library(array('email'));
 		$this->lang->load('alus_auth');
-		$this->load->helper(array('cookie', 'language','url'));
+		$this->load->helper(array('cookie', 'language', 'url'));
 
 		$this->load->library('session');
 
 		$this->load->model('alus_auth_model');
 
-		$this->_cache_user_in_group =& $this->alus_auth_model->_cache_user_in_group;
+		$this->_cache_user_in_group = &$this->alus_auth_model->_cache_user_in_group;
 
 		//auto-login the user if they are remembered
-		if (!$this->logged_in() && get_cookie($this->config->item('identity_cookie_name', 'alus_auth')) && get_cookie($this->config->item('remember_cookie_name', 'alus_auth')))
-		{
+		if (!$this->logged_in() && get_cookie($this->config->item('identity_cookie_name', 'alus_auth')) && get_cookie($this->config->item('remember_cookie_name', 'alus_auth'))) {
 			$this->alus_auth_model->login_remembered_user();
 		}
 
 		$email_config = $this->config->item('email_config', 'alus_auth');
 
-		if ($this->config->item('use_ci_email', 'alus_auth') && isset($email_config) && is_array($email_config))
-		{
+		if ($this->config->item('use_ci_email', 'alus_auth') && isset($email_config) && is_array($email_config)) {
 			$this->email->initialize($email_config);
 		}
 
@@ -94,19 +94,16 @@ class Alus_auth
 	 **/
 	public function __call($method, $arguments)
 	{
-		if (!method_exists( $this->alus_auth_model, $method) )
-		{
+		if (!method_exists($this->alus_auth_model, $method)) {
 			throw new Exception('Undefined method alus_auth::' . $method . '() called');
 		}
-		if($method == 'create_user')
-		{
+		if ($method == 'create_user') {
 			return call_user_func_array(array($this, 'register'), $arguments);
 		}
-		if($method=='update_user')
-		{
+		if ($method == 'update_user') {
 			return call_user_func_array(array($this, 'update'), $arguments);
 		}
-		return call_user_func_array( array($this->alus_auth_model, $method), $arguments);
+		return call_user_func_array(array($this->alus_auth_model, $method), $arguments);
 	}
 
 	/**
@@ -134,53 +131,42 @@ class Alus_auth
 	 **/
 	public function forgotten_password($identity)    //changed $email to $identity
 	{
-		if ( $this->alus_auth_model->forgotten_password($identity) )   //changed
+		if ($this->alus_auth_model->forgotten_password($identity))   //changed
 		{
 			// Get user information
-      $identifier = $this->alus_auth_model->identity_column; // use model identity column, so it can be overridden in a controller
-      $user = $this->where($identifier, $identity)->where('active', 1)->users()->row();  // changed to get_user_by_identity from email
+			$identifier = $this->alus_auth_model->identity_column; // use model identity column, so it can be overridden in a controller
+			$user = $this->where($identifier, $identity)->where('active', 1)->users()->row();  // changed to get_user_by_identity from email
 
-			if ($user)
-			{
+			if ($user) {
 				$data = array(
 					'identity'		=> $user->{$this->config->item('identity', 'alus_auth')},
 					'forgotten_password_code' => $user->jkl
 				);
 
-				if(!$this->config->item('use_ci_email', 'alus_auth'))
-				{
+				if (!$this->config->item('use_ci_email', 'alus_auth')) {
 					$this->set_message('forgot_password_successful');
 					return $data;
-				}
-				else
-				{
-					$message = $this->load->view($this->config->item('email_templates', 'alus_auth').$this->config->item('email_forgot_password', 'alus_auth'), $data, true);
+				} else {
+					$message = $this->load->view($this->config->item('email_templates', 'alus_auth') . $this->config->item('email_forgot_password', 'alus_auth'), $data, true);
 					$this->email->clear();
 					$this->email->from($this->config->item('admin_email', 'alus_auth'), $this->config->item('site_title', 'alus_auth'));
 					$this->email->to($user->email);
 					$this->email->subject($this->config->item('site_title', 'alus_auth') . ' - ' . $this->lang->line('email_forgotten_password_subject'));
 					$this->email->message($message);
 
-					if ($this->email->send())
-					{
+					if ($this->email->send()) {
 						$this->set_message('forgot_password_successful');
 						return TRUE;
-					}
-					else
-					{
+					} else {
 						$this->set_error('forgot_password_unsuccessful');
 						return FALSE;
 					}
 				}
-			}
-			else
-			{
+			} else {
 				$this->set_error('forgot_password_unsuccessful');
 				return FALSE;
 			}
-		}
-		else
-		{
+		} else {
 			$this->set_error('forgot_password_unsuccessful');
 			return FALSE;
 		}
@@ -199,8 +185,7 @@ class Alus_auth
 		$identity = $this->config->item('identity', 'alus_auth');
 		$profile  = $this->where('jkl', $code)->users()->row(); //pass the code to profile
 
-		if (!$profile)
-		{
+		if (!$profile) {
 			$this->alus_auth_model->trigger_events(array('post_password_change', 'password_change_unsuccessful'));
 			$this->set_error('password_change_unsuccessful');
 			return FALSE;
@@ -208,21 +193,17 @@ class Alus_auth
 
 		$new_password = $this->alus_auth_model->forgotten_password_complete($code, $profile->def);
 
-		if ($new_password)
-		{
+		if ($new_password) {
 			$data = array(
 				'identity'     => $profile->{$identity},
 				'new_password' => $new_password
 			);
-			if(!$this->config->item('use_ci_email', 'alus_auth'))
-			{
+			if (!$this->config->item('use_ci_email', 'alus_auth')) {
 				$this->set_message('password_change_successful');
 				$this->alus_auth_model->trigger_events(array('post_password_change', 'password_change_successful'));
-					return $data;
-			}
-			else
-			{
-				$message = $this->load->view($this->config->item('email_templates', 'alus_auth').$this->config->item('email_forgot_password_complete', 'alus_auth'), $data, true);
+				return $data;
+			} else {
+				$message = $this->load->view($this->config->item('email_templates', 'alus_auth') . $this->config->item('email_forgot_password_complete', 'alus_auth'), $data, true);
 
 				$this->email->clear();
 				$this->email->from($this->config->item('admin_email', 'alus_auth'), $this->config->item('site_title', 'alus_auth'));
@@ -230,19 +211,15 @@ class Alus_auth
 				$this->email->subject($this->config->item('site_title', 'alus_auth') . ' - ' . $this->lang->line('email_new_password_subject'));
 				$this->email->message($message);
 
-				if ($this->email->send())
-				{
+				if ($this->email->send()) {
 					$this->set_message('password_change_successful');
 					$this->alus_auth_model->trigger_events(array('post_password_change', 'password_change_successful'));
 					return TRUE;
-				}
-				else
-				{
+				} else {
 					$this->set_error('password_change_unsuccessful');
 					$this->alus_auth_model->trigger_events(array('post_password_change', 'password_change_unsuccessful'));
 					return FALSE;
 				}
-
 			}
 		}
 
@@ -260,13 +237,10 @@ class Alus_auth
 	{
 		$profile = $this->where('jkl', $code)->users()->row(); //pass the code to profile
 
-		if (!is_object($profile))
-		{
+		if (!is_object($profile)) {
 			$this->set_error('password_change_unsuccessful');
 			return FALSE;
-		}
-		else
-		{
+		} else {
 			if ($this->config->item('forgot_password_expiration', 'alus_auth') > 0) {
 				//Make sure it isn't expired
 				$expiration = $this->config->item('forgot_password_expiration', 'alus_auth');
@@ -295,25 +269,18 @@ class Alus_auth
 
 		$id = $this->alus_auth_model->register($identity, $password, $email, $additional_data, $group_ids);
 
-		if (!$email_activation)
-		{
-			if ($id !== FALSE)
-			{
+		if (!$email_activation) {
+			if ($id !== FALSE) {
 				$this->set_message('account_creation_successful');
 				$this->alus_auth_model->trigger_events(array('post_account_creation', 'post_account_creation_successful'));
 				return $id;
-			}
-			else
-			{
+			} else {
 				$this->set_error('account_creation_unsuccessful');
 				$this->alus_auth_model->trigger_events(array('post_account_creation', 'post_account_creation_unsuccessful'));
 				return FALSE;
 			}
-		}
-		else
-		{
-			if (!$id)
-			{
+		} else {
+			if (!$id) {
 				$this->set_error('account_creation_unsuccessful');
 				return FALSE;
 			}
@@ -325,8 +292,7 @@ class Alus_auth
 			$this->alus_auth_model->clear_messages();
 
 
-			if (!$deactivate)
-			{
+			if (!$deactivate) {
 				$this->set_error('deactivate_unsuccessful');
 				$this->alus_auth_model->trigger_events(array('post_account_creation', 'post_account_creation_unsuccessful'));
 				return FALSE;
@@ -342,15 +308,12 @@ class Alus_auth
 				'abc'      => $email,
 				'activation' => $activation_code,
 			);
-			if(!$this->config->item('use_ci_email', 'alus_auth'))
-			{
+			if (!$this->config->item('use_ci_email', 'alus_auth')) {
 				$this->alus_auth_model->trigger_events(array('post_account_creation', 'post_account_creation_successful', 'activation_email_successful'));
 				$this->set_message('activation_email_successful');
 				return $data;
-			}
-			else
-			{
-				$message = $this->load->view($this->config->item('email_templates', 'alus_auth').$this->config->item('email_activate', 'alus_auth'), $data, true);
+			} else {
+				$message = $this->load->view($this->config->item('email_templates', 'alus_auth') . $this->config->item('email_activate', 'alus_auth'), $data, true);
 
 				$this->email->clear();
 				$this->email->from($this->config->item('admin_email', 'alus_auth'), $this->config->item('site_title', 'alus_auth'));
@@ -358,13 +321,11 @@ class Alus_auth
 				$this->email->subject($this->config->item('site_title', 'alus_auth') . ' - ' . $this->lang->line('email_activation_subject'));
 				$this->email->message($message);
 
-				if ($this->email->send() == TRUE)
-				{
+				if ($this->email->send() == TRUE) {
 					$this->alus_auth_model->trigger_events(array('post_account_creation', 'post_account_creation_successful', 'activation_email_successful'));
 					$this->set_message('activation_email_successful');
 					return $id;
 				}
-
 			}
 
 			$this->alus_auth_model->trigger_events(array('post_account_creation', 'post_account_creation_unsuccessful', 'activation_email_unsuccessful'));
@@ -385,22 +346,17 @@ class Alus_auth
 
 		$identity = $this->config->item('identity', 'alus_auth');
 
-                if (substr(CI_VERSION, 0, 1) == '2')
-		{
-			$this->session->unset_userdata( array($identity => '', 'id' => '', 'user_id' => '') );
-                }
-                else
-                {
-                	$this->session->unset_userdata( array($identity, 'id', 'user_id') );
-                }
+		if (substr(CI_VERSION, 0, 1) == '2') {
+			$this->session->unset_userdata(array($identity => '', 'id' => '', 'user_id' => ''));
+		} else {
+			$this->session->unset_userdata(array($identity, 'id', 'user_id'));
+		}
 
 		// delete the remember me cookies if they exist
-		if (get_cookie($this->config->item('identity_cookie_name', 'alus_auth')))
-		{
+		if (get_cookie($this->config->item('identity_cookie_name', 'alus_auth'))) {
 			delete_cookie($this->config->item('identity_cookie_name', 'alus_auth'));
 		}
-		if (get_cookie($this->config->item('remember_cookie_name', 'alus_auth')))
-		{
+		if (get_cookie($this->config->item('remember_cookie_name', 'alus_auth'))) {
 			delete_cookie($this->config->item('remember_cookie_name', 'alus_auth'));
 		}
 
@@ -408,12 +364,9 @@ class Alus_auth
 		$this->session->sess_destroy();
 
 		//Recreate the session
-		if (substr(CI_VERSION, 0, 1) == '2')
-		{
+		if (substr(CI_VERSION, 0, 1) == '2') {
 			$this->session->sess_create();
-		}
-		else
-		{
+		} else {
 			//$this->session->sess_destroy();
 		}
 
@@ -443,8 +396,7 @@ class Alus_auth
 	public function get_user_id()
 	{
 		$user_id = $this->session->userdata('user_id');
-		if (!empty($user_id))
-		{
+		if (!empty($user_id)) {
 			return $user_id;
 		}
 		return null;
@@ -457,7 +409,7 @@ class Alus_auth
 	 * @return bool
 	 * @author Ben Edmunds
 	 **/
-	public function is_admin($id=false)
+	public function is_admin($id = false)
 	{
 		$this->alus_auth_model->trigger_events('is_admin');
 
@@ -476,41 +428,34 @@ class Alus_auth
 	 * @return bool
 	 * @author Phil Sturgeon
 	 **/
-	public function in_group($check_group, $id=false, $check_all = false)
+	public function in_group($check_group, $id = false, $check_all = false)
 	{
 		$this->alus_auth_model->trigger_events('in_group');
 
 		$id || $id = $this->session->userdata('user_id');
 
-		if (!is_array($check_group))
-		{
+		if (!is_array($check_group)) {
 			$check_group = array($check_group);
 		}
 
-		if (isset($this->_cache_user_in_group[$id]))
-		{
+		if (isset($this->_cache_user_in_group[$id])) {
 			$groups_array = $this->_cache_user_in_group[$id];
-		}
-		else
-		{
+		} else {
 			$users_groups = $this->alus_auth_model->get_users_groups($id)->result();
 			$groups_array = array();
-			foreach ($users_groups as $group)
-			{
+			foreach ($users_groups as $group) {
 				$groups_array[$group->id] = $group->name;
 			}
 			$this->_cache_user_in_group[$id] = $groups_array;
 		}
-		foreach ($check_group as $key => $value)
-		{
+		foreach ($check_group as $key => $value) {
 			$groups = (is_string($value)) ? $groups_array : array_keys($groups_array);
 
 			/**
 			 * if !all (default), in_array
 			 * if all, !in_array
 			 */
-			if (in_array($value, $groups) xor $check_all)
-			{
+			if (in_array($value, $groups) xor $check_all) {
 				/**
 				 * if !all (default), true
 				 * if all, false
@@ -526,14 +471,13 @@ class Alus_auth
 		return $check_all;
 	}
 
- 	/* list table */
- 	public function alus_co()
- 	{
- 		return $this->config->item('alus', 'alus_auth');
- 		
- 	}
+	/* list table */
+	public function alus_co()
+	{
+		return $this->config->item('alus', 'alus_auth');
+	}
 
- 	/*public function get_theme_header()
+	/*public function get_theme_header()
  	{
  		return $this->alus_auth_model->get_theme_header();
  	}
@@ -545,26 +489,95 @@ class Alus_auth
  	{
  		return $this->alus_auth_model->get_theme_modal($pilih);
  	}*/
- 	public function template($title_head=null,$index_tampil=null,$data=array())
-    {
-        if($this->alus_auth->logged_in())
-         {
-            $head['title'] = $title_head;
-            $data['title_head'] = $title_head;
+	public function template($title_head = null, $index_tampil = null, $data = array())
+	{
+		if ($this->alus_auth->logged_in()) {
+			$head['title'] = $title_head;
+			$data['title_head'] = $title_head;
 
-            /*DATA*/
+			/*DATA*/
 
-            /*END DATA*/
-            $this->load->view('template/temaalus/header',$head);
-            if($index_tampil)
-            {
-                $this->load->view($index_tampil,$data);
-            }
-            $this->load->view('template/temaalus/footer');
-        }else
-        {
-            redirect('panel_login/login','refresh');
-        }
-    }
+			/*END DATA*/
+			$this->load->view('template/temaalus/header', $head);
+			if ($index_tampil) {
+				$this->load->view($index_tampil, $data);
+			}
+			$this->load->view('template/temaalus/footer');
+		} else {
+			redirect('panel_login/login', 'refresh');
+		}
+	}
+	private function _get_access_for_uri($uri)
+	{
+		if (!isset($this->CI)) $this->CI = get_instance();
+		if (!isset($this->CI->db)) $this->CI->load->database();
+
+		// Ambil menu sesuai menu_uri
+		$menu = $this->CI->db->get_where('alus_mg', ['menu_uri' => $uri])->row();
+		if (!$menu) return null;
+
+		$user_id = $this->session->userdata('user_id');
+		if (!$user_id) return null;
+
+		$groups = $this->alus_auth_model->get_users_groups($user_id)->result();
+		if (!$groups) return null;
+
+		foreach ($groups as $g) {
+			$akses = $this->CI->db->get_where('alus_mga', [
+				'id_group' => $g->id,
+				'id_menu'  => $menu->menu_id
+			])->row();
+
+			if ($akses) return $akses; // hanya return jika ketemu record akses
+		}
+
+		return null;
+	}
+
+
+	public function can_view($uri)
+	{
+		$akses = $this->_get_access_for_uri($uri);
+		return ($akses && (int)$akses->can_view === 1);
+	}
+
+	public function can_add($uri)
+	{
+		$akses = $this->_get_access_for_uri($uri);
+		return ($akses && (int)$akses->can_add === 1);
+	}
+
+	public function can_edit($uri)
+	{
+		$akses = $this->_get_access_for_uri($uri);
+		return ($akses && (int)$akses->can_edit === 1);
+	}
+
+	public function can_delete($uri)
+	{
+		$akses = $this->_get_access_for_uri($uri);
+		return ($akses && (int)$akses->can_delete === 1);
+	}
+
+	// =====================================================
+	// Ambil nama role (group) user yang sedang login
+	// =====================================================
+	public function get_user_role()
+	{
+		// pastikan user sudah login
+		$user_id = $this->session->userdata('user_id');
+		if (!$user_id) {
+			return null;
+		}
+
+		// ambil semua group user (biasanya 1 user = 1 group)
+		$groups = $this->alus_auth_model->get_users_groups($user_id)->result();
+
+		// kalau user punya group, kembalikan nama group pertama
+		if (!empty($groups)) {
+			return $groups[0]->name; // misal: 'admin', 'resepsionist', 'user'
+		}
+
+		return null;
+	}
 }
-

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2025 at 12:57 AM
+-- Generation Time: Dec 20, 2025 at 12:02 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -38,8 +38,8 @@ CREATE TABLE `alus_g` (
 --
 
 INSERT INTO `alus_g` (`id`, `name`, `description`) VALUES
-(1, 'admin', 'testaa'),
-(20, 'Resepsionis', 'Front Office / Operasional Harian');
+(1, 'admin', 'Penguasa Website'),
+(20, 'resepsionist', 'Front Office / Operasional Harian');
 
 -- --------------------------------------------------------
 
@@ -99,6 +99,14 @@ CREATE TABLE `alus_la` (
   `login` varchar(100) NOT NULL,
   `time` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `alus_la`
+--
+
+INSERT INTO `alus_la` (`id`, `ip_address`, `login`, `time`) VALUES
+(7, '::1', 'MTIzNDU2Nzg5MDEyMzQ1Nv+ivJgxxby5eg508DTNdlID3W0pjA==', 1766208436),
+(8, '::1', 'MTIzNDU2Nzg5MDEyMzQ1Nv+ivJgxxby5eg508DTNdlID3W0pjA==', 1766208444);
 
 -- --------------------------------------------------------
 
@@ -164,15 +172,24 @@ INSERT INTO `alus_mga` (`id`, `id_group`, `id_menu`, `can_view`, `can_edit`, `ca
 (3686, 9, 30, 1, 0, 0, 0, '1970-01-01 12:00:00', '1970-01-01 12:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00'),
 (3687, 9, 12, 1, 0, 0, 0, '1970-01-01 12:00:00', '1970-01-01 12:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00'),
 (3688, 9, 13, 1, 0, 0, 0, '1970-01-01 12:00:00', '1970-01-01 12:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00'),
-(4020, 1, 30, 1, 0, 0, 0, '2016-09-06 10:55:00', '2016-09-06 10:56:00', '2016-08-08 12:06:00', '2016-08-08 12:06:00'),
-(4021, 1, 11, 1, 1, 1, 1, '2016-09-06 10:55:00', '2016-09-06 10:55:00', '2016-08-08 12:06:00', '2016-08-09 13:50:00'),
-(4022, 1, 12, 1, 1, 1, 1, '2016-09-06 10:55:00', '2016-09-06 10:55:00', '1970-01-01 01:00:00', '1970-01-01 01:00:00'),
-(4023, 1, 13, 1, 1, 1, 1, '1970-01-01 01:00:00', '1970-01-01 01:00:00', '1970-01-01 01:00:00', '1970-01-01 01:00:00'),
-(4024, 1, 93, 1, 1, 1, 1, '1970-01-01 01:00:00', '1970-01-01 01:00:00', '1970-01-01 01:00:00', '1970-01-01 01:00:00'),
-(4025, 1, 94, 1, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
-(4026, 1, 95, 1, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
-(4027, 1, 96, 1, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
-(4028, 1, 97, 1, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL);
+(4101, 20, 30, 0, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4102, 20, 11, 0, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4103, 20, 12, 0, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4104, 20, 13, 0, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4105, 20, 93, 0, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4106, 20, 94, 1, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4107, 20, 95, 1, 1, 1, 1, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4108, 20, 96, 1, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4109, 20, 97, 1, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4137, 1, 30, 1, 0, 0, 0, '2016-09-06 10:55:00', '2016-09-06 10:56:00', '2016-08-08 12:06:00', '2016-08-08 12:06:00'),
+(4138, 1, 11, 1, 1, 1, 1, '2016-09-06 10:55:00', '2016-09-06 10:55:00', '2016-08-08 12:06:00', '2016-08-09 13:50:00'),
+(4139, 1, 12, 1, 1, 1, 1, '2016-09-06 10:55:00', '2016-09-06 10:55:00', '1970-01-01 01:00:00', '1970-01-01 01:00:00'),
+(4140, 1, 13, 1, 1, 1, 1, '1970-01-01 01:00:00', '1970-01-01 01:00:00', '1970-01-01 01:00:00', '1970-01-01 01:00:00'),
+(4141, 1, 93, 1, 1, 1, 1, '1970-01-01 01:00:00', '1970-01-01 01:00:00', '1970-01-01 01:00:00', '1970-01-01 01:00:00'),
+(4142, 1, 94, 1, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4143, 1, 95, 1, 1, 1, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4144, 1, 96, 1, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL),
+(4145, 1, 97, 1, 0, 0, 0, '1970-01-01 01:00:00', '1970-01-01 01:00:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -214,8 +231,9 @@ CREATE TABLE `alus_u` (
 --
 
 INSERT INTO `alus_u` (`id`, `username`, `job_title`, `abc`, `ip_address`, `ghi`, `def`, `mno`, `jkl`, `stu`, `pqr`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `ht`, `picture`, `mdo_id`, `mos_id`, `grup_type`, `bpd_id`, `bpd_id_2`, `staff_pmk_id`) VALUES
-(64, 'super admin', 'Super Admin', 'MTIzNDU2Nzg5MDEyMzQ1Nui+opkixa24fwlV0TfNflVBkGEr', '::1', '$2y$08$GgyrrdcJTxV0YIu5On5qoell7OztL8kp1tdlpkoWstcqKZNp1IaZS', 'xEfWFClsAdO4BnNm', '', NULL, 1764865143, '', 1469523580, 1766187171, 1, 'Super', 'Admin', '', '085697362948', 0, '1496118042.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
-(181, 'admin', 'Admin', 'MTIzNDU2Nzg5MDEyMzQ1Nvqvv5U+lom0cgp83n3DeFY=', '::1', '$2y$08$Izeqd/DlG62/uoxSNgcKUOiw1ZJFthEY7YpvfgHhpI0xWWi/5SSxK', 'f2sOH32PAw1vJ/pw', NULL, NULL, NULL, NULL, 1766160408, NULL, 1, 'Admin', '', NULL, '0', 1, 'avatar_default.png', NULL, NULL, NULL, NULL, NULL, NULL);
+(64, 'super admin', 'Super Admin', 'MTIzNDU2Nzg5MDEyMzQ1Nui+opkixa24fwlV0TfNflVBkGEr', '::1', '$2y$08$GgyrrdcJTxV0YIu5On5qoell7OztL8kp1tdlpkoWstcqKZNp1IaZS', 'xEfWFClsAdO4BnNm', '', NULL, 1764865143, '', 1469523580, 1766226909, 1, 'Super', 'Admin', '', '085697362948', 0, '1496118042.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
+(181, 'admin', 'Admin', 'MTIzNDU2Nzg5MDEyMzQ1Nvqvv5U+lom0cgp83n3DeFY=', '::1', '$2y$08$Izeqd/DlG62/uoxSNgcKUOiw1ZJFthEY7YpvfgHhpI0xWWi/5SSxK', 'f2sOH32PAw1vJ/pw', NULL, NULL, NULL, NULL, 1766160408, NULL, 1, 'Admin', '', NULL, '0', 1, 'avatar_default.png', NULL, NULL, NULL, NULL, NULL, NULL),
+(182, 'Dinda Aulia', 'Resepsionist', 'MTIzNDU2Nzg5MDEyMzQ1Nv+ivJgxxby5fwZV1z7BfldBkGEr', '::1', '$2y$08$u93XRbQ6bKa2hDSOHMimqOQGH7l7Fu5nH/in4nhRQTumfvzYZWeIW', '3OLwHJhpfRkuikFv', NULL, NULL, NULL, NULL, 1766201793, 1766218405, 1, 'Dinda', 'Aulia', NULL, '0', 0, 'avatar_default.png', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -235,7 +253,8 @@ CREATE TABLE `alus_ug` (
 
 INSERT INTO `alus_ug` (`id`, `user_id`, `group_id`) VALUES
 (69, 64, 1),
-(68, 181, 1);
+(68, 181, 1),
+(70, 182, 20);
 
 -- --------------------------------------------------------
 
@@ -317,7 +336,6 @@ CREATE TABLE `bookings` (
 
 INSERT INTO `bookings` (`id`, `room_id`, `full_name`, `email`, `phone`, `mobile`, `city`, `country`, `adults`, `children`, `arrival_date`, `departure_date`, `nights`, `status`, `price_per_night`, `total_price`, `message`, `created_at`, `invoice_number`) VALUES
 (1, 1, 'ujeng', 'youngsta446@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 1, '0000-00-00', '0000-00-00', NULL, 'pending', NULL, NULL, 'nginep', '2025-12-16 04:08:58', NULL),
-(2, 1, 'ujeng', 'youngsta446@gmail.com', '08569362948', '085697362948', 'bogor', 'indonesia', 3, 3, '2025-12-23', '2025-12-23', NULL, 'pending', NULL, NULL, 'nginep', '2025-12-16 04:17:46', NULL),
 (3, 2, 'likeu', 'likeu@gmail.com', '123', '123', 'bogor', 'indonesia', 1, 0, '2025-12-16', '2025-12-17', 1, 'pending', NULL, NULL, 'test', '2025-12-16 04:37:04', NULL),
 (4, 2, 'test', 'test@gmail.com', 'test', 'test', 'test', 'test', 2, 2, '2025-12-16', '2025-12-17', 1, 'pending', NULL, NULL, 'test', '2025-12-16 04:38:50', NULL),
 (5, 1, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 150000, 150000, 'mau nginep', '2025-12-16 05:22:57', NULL),
@@ -325,7 +343,6 @@ INSERT INTO `bookings` (`id`, `room_id`, `full_name`, `email`, `phone`, `mobile`
 (7, 1, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 150000, 150000, 'mau nginep', '2025-12-16 05:33:22', 'INV-20251216-25600'),
 (8, 1, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 150000, 150000, 'mau nginep', '2025-12-16 05:33:26', 'INV-20251216-66EC9'),
 (9, 1, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 150000, 150000, 'mau nginep', '2025-12-16 05:33:58', 'INV-20251216-0DD52'),
-(10, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:02:16', 'INV-20251216-C6328'),
 (11, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:06:21', 'INV-20251216-510FD'),
 (12, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:06:22', 'INV-20251216-D0457'),
 (13, 2, 'LUQMAN ALY RAZAK', 'luqmanaly666@gmail.com', '085697362948', '085697362948', 'bogor', 'indonesia', 2, 0, '2025-12-16', '2025-12-17', 1, 'pending', 4000, 4000, 'mau nginep', '2025-12-16 06:06:26', 'INV-20251216-EAB32'),
@@ -1001,16 +1018,17 @@ CREATE TABLE `rooms` (
   `status` tinyint(2) NOT NULL DEFAULT 1,
   `tag` varchar(50) DEFAULT NULL,
   `promo_start` date DEFAULT NULL,
-  `promo_end` date DEFAULT NULL
+  `promo_end` date DEFAULT NULL,
+  `is_active` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`id`, `name`, `price`, `total_room`, `old_price`, `max_adult`, `max_child`, `rating`, `main_image`, `deskripsi`, `status`, `tag`, `promo_start`, `promo_end`) VALUES
-(1, 'Master Suite', '150000.00', 5, '165000.00', 3, 1, '4.5', '1.jpg', 'Kamar mewah dengan fasilitas lengkap', 6, 'Featured', '2025-12-14', '2025-12-14'),
-(2, 'Mini Suite', '4000.00', 20, '4500.00', 2, 1, '4.2', '2.jpg', 'Kamar nyaman untuk keluarga kecil', 1, 'special', '2025-12-15', '2025-12-15');
+INSERT INTO `rooms` (`id`, `name`, `price`, `total_room`, `old_price`, `max_adult`, `max_child`, `rating`, `main_image`, `deskripsi`, `status`, `tag`, `promo_start`, `promo_end`, `is_active`) VALUES
+(1, 'Master Suite', '150000.00', 5, '165000.00', 3, 1, '4.5', '1.jpg', 'Kamar mewah dengan fasilitas lengkap', 6, 'Featured', '2025-12-14', '2025-12-14', 1),
+(2, 'Mini Suite', '4000.00', 20, '4500.00', 2, 1, '4.2', '2.jpg', 'Kamar nyaman untuk keluarga kecil', 1, 'special', '2025-12-15', '2025-12-15', 1);
 
 -- --------------------------------------------------------
 
@@ -1636,7 +1654,7 @@ ALTER TABLE `alus_gd`
 -- AUTO_INCREMENT for table `alus_la`
 --
 ALTER TABLE `alus_la`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `alus_mg`
@@ -1648,19 +1666,19 @@ ALTER TABLE `alus_mg`
 -- AUTO_INCREMENT for table `alus_mga`
 --
 ALTER TABLE `alus_mga`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4029;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4146;
 
 --
 -- AUTO_INCREMENT for table `alus_u`
 --
 ALTER TABLE `alus_u`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
 
 --
 -- AUTO_INCREMENT for table `alus_ug`
 --
 ALTER TABLE `alus_ug`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `amenities`
