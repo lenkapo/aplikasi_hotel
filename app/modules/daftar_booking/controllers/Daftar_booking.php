@@ -53,6 +53,7 @@ class Daftar_booking extends CI_Controller
 
             $row = [];
             $row[] = $no;
+            $row[] = $daftar_booking->invoice_number;
             $row[] = $nama_kamar->name;
             $row[] = $daftar_booking->full_name;
             $row[] = $daftar_booking->email;
@@ -66,7 +67,7 @@ class Daftar_booking extends CI_Controller
             $row[] = $daftar_booking->nights . " Malam";
             $row[] = "Rp " . number_format($daftar_booking->price_per_night, 0, ',', '.');
             // $row[] = $daftar_booking->capacity . " Orang";
-            $row[] = $daftar_booking->total_price;
+            $row[] =  "Rp " . number_format($daftar_booking->total_price, 0, ',', '.');
             $row[] = $daftar_booking->message;
             $row[] = $daftar_booking->created_at;
             // $row[] = $daftar_booking->is_active ? "<span class='label label-success'>Active</span>"
@@ -234,14 +235,9 @@ class Daftar_booking extends CI_Controller
             'message' => $this->input->post('message'),
             'status' => 'pending',
             'created_at' => date('Y-m-d H:i:s'),
-            'created_by' => $this->session->userdata('user_id')
-        ];
+            'invoice_number' => $this->generateInvoice(),
 
-        // Upload gambar utama 
-        if ($_FILES['main_image']['name']) {
-            $upload = $this->_do_upload('main_image');
-            $data['main_image'] = $upload;
-        }
+        ];
 
         $q = $this->Alus_items->save($data);
 
@@ -347,5 +343,10 @@ class Daftar_booking extends CI_Controller
         }
 
         return $this->upload->data('file_name');
+    }
+
+    private function generateInvoice()
+    {
+        return 'INV-' . date('Ymd') . '-' . strtoupper(substr(uniqid(), -5));
     }
 }

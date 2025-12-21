@@ -27,6 +27,7 @@
                     <thead>
                         <tr>
                             <th width="1%">No</th>
+                            <th width="100px">Invoice Number</th>
                             <th width="100px">Room Name</th>
                             <th width="100px">Full Name</th>
                             <th width>Email</th>

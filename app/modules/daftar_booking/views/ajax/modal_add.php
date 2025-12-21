@@ -1,6 +1,13 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/temaalus/dist/css/bootstrap-datetimepicker.min.css">
-<script src="<?php echo base_url(); ?>assets/temaalus/dist/js/bootstrap-datetimepicker.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/temaalus/plugin/jQuery/jquery-2.2.3.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+<style>
+    #date_range {
+        cursor: pointer;
+        background: #fff;
+    }
+</style>
 
 <div class="modal-content">
     <div class="modal-header">
@@ -21,6 +28,33 @@
             <div class="callout callout-info">
                 <p>Silakan isi data booking kamar dengan lengkap.</p>
             </div>
+
+            <!-- Tanggal Check-In & Check-Out -->
+
+            <div class="row">
+                <!-- Check-In -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="date_range">Pilih Tanggal Menginap</label>
+                        <input type="text" id="dateRange" class="form-control" placeholder="Pilih Tanggal">
+                    </div>
+                </div>
+
+                <!-- Check-Out -->
+                <div class="col-md-6">
+                    <label for="departure_date">Check-Out</label>
+                    <input
+                        type="date"
+                        id="departure_date"
+                        name="departure_date"
+                        class="form-control"
+                        min=""
+                        required>
+                </div>
+            </div>
+
+
+
 
             <!-- Kamar -->
             <div class="form-group">
@@ -54,13 +88,13 @@
             </div>
 
             <div class="form-group">
-                <label for="phone">Telepon</label>
+                <label for="mobile">Telepon</label>
                 <input type="text" name="mobile" id="mobile" class="form-control" placeholder="Nomor Mobile">
             </div>
 
             <div class="form-group">
-                <label for="phone">City</label>
-                <input type="text" name="city" id="mobile" class="form-control" placeholder="Nomor Mobile">
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" class="form-control">
             </div>
 
             <!-- Jumlah Tamu -->
@@ -75,22 +109,6 @@
                     <div class="form-group">
                         <label for="children">Anak-anak</label>
                         <input type="number" name="children" id="children" class="form-control" min="0" value="0">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tanggal Check-In & Check-Out -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="arrival_date">Tanggal Check-In</label>
-                        <input type="date" name="arrival_date" id="arrival_date" class="form-control datetimepicker" required placeholder="Pilih tanggal masuk">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="departure_date">Tanggal Check-Out</label>
-                        <input type="date" name="departure_date" id="departure_date" class="form-control datetimepicker" required placeholder="Pilih tanggal keluar">
                     </div>
                 </div>
             </div>
@@ -111,12 +129,10 @@
     </div>
 </div>
 
-<script type="text/javascript">
-    $(function() {
-        $('.datetimepicker').datetimepicker({
-            format: 'YYYY-MM-DD',
-            minDate: moment(),
-            useCurrent: false
-        });
+<script>
+    flatpickr("#dateRange", {
+        mode: "range", // enable date range
+        dateFormat: "d-m-Y", // format dd-mm-yyyy
+        minDate: "today" // tidak boleh sebelum hari ini
     });
 </script>
