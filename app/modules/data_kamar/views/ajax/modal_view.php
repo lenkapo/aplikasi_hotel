@@ -10,7 +10,7 @@
         <table class="table table-striped table-bordered">
             <tr>
                 <th style="width: 150px;">Nama Kamar</th>
-                <td> <?= $r->name ?></td>
+                <td> <?= $r->room_name ?></td>
             </tr>
             <tr>
                 <th>Deskripsi</th>
