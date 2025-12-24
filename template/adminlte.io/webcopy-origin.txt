@@ -1,0 +1,112 @@
+Uri: https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\bower_components\bootstrap\dist\css\bootstrap.min.css
+Content Type: text/css
+
+Uri: https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\bower_components\bootstrap\dist\js\bootstrap.min.js
+Content Type: application/javascript
+
+Uri: https://adminlte.io/themes/AdminLTE/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\bower_components\datatables.net-bs\css\dataTables.bootstrap.min.css
+Content Type: text/css
+
+Uri: https://adminlte.io/themes/AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\bower_components\datatables.net-bs\js\dataTables.bootstrap.min.js
+Content Type: application/javascript
+
+Uri: https://adminlte.io/themes/AdminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\bower_components\datatables.net\js\jquery.dataTables.min.js
+Content Type: application/javascript
+
+Uri: https://adminlte.io/themes/AdminLTE/bower_components/fastclick/lib/fastclick.js
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\bower_components\fastclick\lib\fastclick.js
+Content Type: application/javascript
+
+Uri: https://adminlte.io/themes/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\bower_components\font-awesome\css\font-awesome.min.css
+Content Type: text/css
+
+Uri: https://adminlte.io/themes/AdminLTE/bower_components/Ionicons/css/ionicons.min.css
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\bower_components\Ionicons\css\ionicons.min.css
+Content Type: text/css
+
+Uri: https://adminlte.io/themes/AdminLTE/bower_components/jquery-slimscroll/jquery.slimscroll.min.js
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\bower_components\jquery-slimscroll\jquery.slimscroll.min.js
+Content Type: application/javascript
+
+Uri: https://adminlte.io/themes/AdminLTE/bower_components/jquery/dist/jquery.min.js
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\bower_components\jquery\dist\jquery.min.js
+Content Type: application/javascript
+
+Uri: https://adminlte.io/themes/AdminLTE/dist/css/AdminLTE.min.css
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\dist\css\AdminLTE.min.css
+Content Type: text/css
+
+Uri: https://adminlte.io/themes/AdminLTE/dist/css/skins/_all-skins.min.css
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\dist\css\skins\_all-skins.min.css
+Content Type: text/css
+
+Uri: https://adminlte.io/themes/AdminLTE/dist/img/user2-160x160.jpg
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\dist\img\user2-160x160.jpg
+Content Type: image/jpeg
+
+Uri: https://adminlte.io/themes/AdminLTE/dist/img/user3-128x128.jpg
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\dist\img\user3-128x128.jpg
+Content Type: image/jpeg
+
+Uri: https://adminlte.io/themes/AdminLTE/dist/img/user4-128x128.jpg
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\dist\img\user4-128x128.jpg
+Content Type: image/jpeg
+
+Uri: https://adminlte.io/themes/AdminLTE/dist/js/adminlte.min.js
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\dist\js\adminlte.min.js
+Content Type: application/javascript
+
+Uri: https://adminlte.io/themes/AdminLTE/dist/js/demo.js
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\dist\js\demo.js
+Content Type: application/javascript
+
+Uri: https://adminlte.io/themes/AdminLTE/pages/tables/data.html
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\pages\tables\data.html
+Content Type: text/html
+
+Uri: https://adminlte.io/themes/AdminLTE/pages/tables/simple.html
+File Name: C:\Downloaded Web Sites\adminlte.io\themes\AdminLTE\pages\tables\simple.html
+Content Type: text/html
+
+Uri: https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic
+File Name: C:\Downloaded Web Sites\adminlte.io\css
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/sourcesanspro/v23/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7nsDc.ttf
+File Name: C:\Downloaded Web Sites\adminlte.io\s\sourcesanspro\v23\6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7nsDc.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/sourcesanspro/v23/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf
+File Name: C:\Downloaded Web Sites\adminlte.io\s\sourcesanspro\v23\6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/sourcesanspro/v23/6xKwdSBYKcSV-LCoeQqfX1RYOo3qPZY4lCds18E.ttf
+File Name: C:\Downloaded Web Sites\adminlte.io\s\sourcesanspro\v23\6xKwdSBYKcSV-LCoeQqfX1RYOo3qPZY4lCds18E.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/sourcesanspro/v23/6xKwdSBYKcSV-LCoeQqfX1RYOo3qPZZMkids18E.ttf
+File Name: C:\Downloaded Web Sites\adminlte.io\s\sourcesanspro\v23\6xKwdSBYKcSV-LCoeQqfX1RYOo3qPZZMkids18E.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdr.ttf
+File Name: C:\Downloaded Web Sites\adminlte.io\s\sourcesanspro\v23\6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdr.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdr.ttf
+File Name: C:\Downloaded Web Sites\adminlte.io\s\sourcesanspro\v23\6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdr.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf
+File Name: C:\Downloaded Web Sites\adminlte.io\s\sourcesanspro\v23\6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf
+Content Type: font/ttf
+
+Uri: https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015
+File Name: C:\Downloaded Web Sites\adminlte.io\beacon.min.js\vcd15cbe7772f49c399c6a5babf22c1241717689176015
+Content Type: text/javascript
+

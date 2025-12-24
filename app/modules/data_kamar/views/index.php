@@ -10,35 +10,39 @@
   </section>
 
   <section class="content">
-    <div class="box box-primary">
-      <div class="box-header" style="background: #3c8dbc; color:white;">
-        <div class="col-md-6" style="padding: 1px;">
-        </div>
-        <div class="button-group pull-right">
-          <a href="javascript:" data-toggle="modal" data-target="#modal_add" onClick="btn_modal_add()" class="btn btn-xs btn-default"><i class="fa fa-plus"></i> Tambah <?php echo $title_head; ?></a>
-          <button class="btn btn-xs btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Refresh</button>
-        </div>
-      </div>
-      <div class="box-body">
-        <table id="table" class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th width="1%">No</th>
-              <th>Picture</th>
-              <th width="100px">Nama Kamar</th>
-              <th width="200px">Deskripsi</th>
-              <th width="100px">Harga</th>
-              <th>Fasilitas</th>
-              <th>Kapasitas</th>
-              <th width="80px">Tipe Kasur</th>
-              <th>Status</th>
-              <th width="102px">Tools</th>
-            </tr>
-          </thead>
-          <tbody>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box box-primary">
+          <div class="box-header" style="background: #3c8dbc; color:white;">
+            <div class="col-md-6" style="padding: 1px;">
+            </div>
+            <div class="button-group pull-right">
+              <a href="javascript:" data-toggle="modal" data-target="#modal_add" onClick="btn_modal_add()" class="btn btn-xs btn-default"><i class="fa fa-plus"></i> Tambah <?php echo $title_head; ?></a>
+              <button class="btn btn-xs btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Refresh</button>
+            </div>
+          </div>
+          <div class="box-body">
+            <table id="table" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th width="1%">No</th>
+                  <th>Picture</th>
+                  <th width="100px">Nama Kamar</th>
+                  <th width="200px">Deskripsi</th>
+                  <th width="100px">Harga</th>
+                  <th>Fasilitas</th>
+                  <th>Kapasitas</th>
+                  <th width="80px">Tipe Kasur</th>
+                  <th>Status</th>
+                  <th width="102px">Tools</th>
+                </tr>
+              </thead>
+              <tbody>
 
-          </tbody>
-        </table>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </section>

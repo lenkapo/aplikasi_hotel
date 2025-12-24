@@ -3,19 +3,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Model extends CI_Model
 {
-    var $table = 'room_list';
+    var $table = 'rooms';
     var $idtable = 'id';
     var $column_order = array(
         'id',
-        'room_id',
-        'nomor_kamar',
+        'category_id',
+        'room_name',
+        'room_type',
+        'description',
+        'price',
+        'capacity',
+        'bed_type',
+        'size',
+        'image',
         'status',
+        'created_at',
+        'updated_at',
     );
     var $column_search = array(
-        'id',
-        'room_id',
-        'nomor_kamar',
-        'status',
+        'room_name',
     );
     var $order = array('id' => 'ASC');
 
@@ -101,20 +107,5 @@ class Model extends CI_Model
     {
         $this->db->where($this->idtable, $id);
         return $this->db->delete($this->table);
-    }
-
-    public function get_rooms()
-    {
-        return $this->db->get('rooms')->result();
-    }
-
-    // check duplikasi nomor kamar //
-    public function check_duplicate($nomor_kamar, $id = null)
-    {
-        $this->db->where('nomor_kamar', $nomor_kamar);
-        if ($id) {
-            $this->db->where('id !=', $id); // saat edit, abaikan dirinya sendiri
-        }
-        return $this->db->get($this->table)->num_rows() > 0;
     }
 }

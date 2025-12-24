@@ -5,42 +5,49 @@
     <section class="content-header">
         <h1>
             <?php echo $title_head; ?>
-            <small>Room Management</small>
+            <small>Room Reservation</small>
         </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
     </section>
 
     <section class="content">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box box-primary">
-                    <div class="box-header" style="background: #3c8dbc; color:white;">
-                        <div class="col-md-6" style="padding: 1px;">
-                        </div>
-                        <div class="button-group pull-right">
-                            <?php if ($this->alus_auth->in_group(['admin', 'resepsionist']) || $this->alus_auth->can_add('daftar_booking')): ?>
-
-                                <a href="javascript:" data-toggle="modal" data-target="#modal_add" onClick="btn_modal_add()" class="btn btn-xs btn-default"><i class="fa fa-plus"></i> Tambah <?php echo $title_head; ?></a>
-                            <?php endif; ?>
-                            <button class="btn btn-xs btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Refresh</button>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <table id="table" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th width="2%">No</th>
-                                    <th width="16%">No Kamar</th>
-                                    <th width="16%">Nama Kamar</th>
-                                    <th width="11%">Status</th>
-                                    <th width="6%">Tools</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
-                    </div>
+        <div class="box box-primary">
+            <div class="box-header" style="background: #3c8dbc; color:white;">
+                <div class="col-md-6" style="padding: 1px;">
                 </div>
+                <div class="button-group pull-right">
+                    <?php if ($this->alus_auth->in_group(['admin', 'resepsionist']) || $this->alus_auth->can_add('daftar_booking')): ?>
+
+                        <a href="javascript:" data-toggle="modal" data-target="#modal_add" onClick="btn_modal_add()" class="btn btn-xs btn-default"><i class="fa fa-plus"></i> Tambah <?php echo $title_head; ?></a>
+                    <?php endif; ?>
+                    <button class="btn btn-xs btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Refresh</button>
+                </div>
+            </div>
+            <div class="box-body">
+                <table id="table" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th width="1%">No</th>
+                            <th width>Gambar</th>
+                            <th>Nama</th>
+                            <th>Kategori</th>
+                            <th width="100px">Deskripsi</th>
+                            <th width>Harga</th>
+                            <th width>Kapasitas</th>
+                            <th width>Kasur</th>
+                            <th width>Size</th>
+                            <th width>Status</th>
+                            <th width="100px">Tools</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -88,8 +95,6 @@
             "processing": true,
             "serverSide": true,
             "scrollX": true,
-            "autoWidth": false, // biar tidak kunci lebar kolom
-            "responsive": true, // biar menyesuaikan layar
 
             "ajax": {
                 "url": "<?php echo base_url() . $this->uri->segment(1); ?>/ajax_list",
@@ -105,7 +110,7 @@
                     "className": "text-center",
                 },
                 {
-                    "targets": [0, 4],
+                    "targets": [0, 1, 5, 6, 7, 8, 9],
                     "className": "text-center",
                 },
             ],
@@ -116,7 +121,6 @@
         });
 
     });
-
     // ==== FIX UTAMA: sinkronkan lebar header & isi ====
     function syncTableWidth() {
         setTimeout(function() {

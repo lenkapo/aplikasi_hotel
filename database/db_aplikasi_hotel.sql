@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2025 at 11:45 AM
+-- Generation Time: Dec 24, 2025 at 10:34 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -237,7 +237,7 @@ CREATE TABLE `alus_u` (
 --
 
 INSERT INTO `alus_u` (`id`, `username`, `job_title`, `abc`, `ip_address`, `ghi`, `def`, `mno`, `jkl`, `stu`, `pqr`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `ht`, `picture`, `mdo_id`, `mos_id`, `grup_type`, `bpd_id`, `bpd_id_2`, `staff_pmk_id`) VALUES
-(64, 'super admin', 'Super Admin', 'MTIzNDU2Nzg5MDEyMzQ1Nui+opkixa24fwlV0TfNflVBkGEr', '::1', '$2y$08$GgyrrdcJTxV0YIu5On5qoell7OztL8kp1tdlpkoWstcqKZNp1IaZS', 'xEfWFClsAdO4BnNm', '', NULL, 1764865143, '', 1469523580, 1766390227, 1, 'Super', 'Admin', '', '085697362948', 0, '1496118042.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
+(64, 'super admin', 'Super Admin', 'MTIzNDU2Nzg5MDEyMzQ1Nui+opkixa24fwlV0TfNflVBkGEr', '::1', '$2y$08$GgyrrdcJTxV0YIu5On5qoell7OztL8kp1tdlpkoWstcqKZNp1IaZS', 'xEfWFClsAdO4BnNm', '', NULL, 1764865143, '', 1469523580, 1766567957, 1, 'Super', 'Admin', '', '085697362948', 0, '1496118042.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
 (181, 'admin', 'Admin', 'MTIzNDU2Nzg5MDEyMzQ1Nvqvv5U+lom0cgp83n3DeFY=', '::1', '$2y$08$Izeqd/DlG62/uoxSNgcKUOiw1ZJFthEY7YpvfgHhpI0xWWi/5SSxK', 'f2sOH32PAw1vJ/pw', NULL, NULL, NULL, NULL, 1766160408, NULL, 1, 'Admin', '', NULL, '0', 1, 'avatar_default.png', NULL, NULL, NULL, NULL, NULL, NULL),
 (182, 'Dinda Aulia', 'Resepsionist', 'MTIzNDU2Nzg5MDEyMzQ1Nv+ivJgxxby5fwZV1z7BfldBkGEr', '::1', '$2y$08$u93XRbQ6bKa2hDSOHMimqOQGH7l7Fu5nH/in4nhRQTumfvzYZWeIW', '3OLwHJhpfRkuikFv', NULL, NULL, NULL, NULL, 1766201793, 1766218405, 1, 'Dinda', 'Aulia', NULL, '0', 0, 'avatar_default.png', NULL, NULL, NULL, NULL, NULL, NULL);
 
@@ -1060,7 +1060,7 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`id`, `category_id`, `room_name`, `room_type`, `description`, `price`, `capacity`, `bed_type`, `size`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Deluxe Room', 'Deluxe', 'Kamar luas dengan balkon pribadi dan pemandangan kota.', '750000.00', 2, 'Queen Bed', '32 m²', '1.jpg', 'cleaning', '2025-12-22 07:06:02', '2025-12-22 08:06:16'),
+(1, 2, 'Deluxe Room', 'Deluxe', 'Kamar luas dengan balkon pribadi dan pemandangan kota.', '750000.00', 2, 'Queen Bed', '32 m²', '1.jpg', 'available', '2025-12-22 07:06:02', '2025-12-23 08:43:59'),
 (2, 1, 'Standard Room', 'Standard', 'Kamar nyaman dengan fasilitas dasar.', '400000.00', 2, 'Double Bed', '24 m²', '2.jpg', 'available', '2025-12-22 07:06:02', '2025-12-22 07:24:26'),
 (3, 3, 'Family Suite', 'Suite', 'Kamar besar untuk keluarga dengan ruang tamu.', '1200000.00', 4, '2 Queen Beds', '56 m²', '3.jpg', 'available', '2025-12-22 07:06:02', '2025-12-22 07:24:30'),
 (4, 3, 'Executive Suite', 'Suite', 'Kamar mewah dengan jacuzzi dan view laut.', '1500000.00', 2, 'King Bed', '60 m²', '4.jpg', 'booked', '2025-12-22 07:06:02', '2025-12-22 07:24:35'),
@@ -1170,6 +1170,36 @@ INSERT INTO `room_categories` (`id`, `category_name`, `description`, `created_at
 (2, 'Deluxe', 'Kamar lebih luas dengan pemandangan indah.', '2025-12-22 07:06:02', '2025-12-22 07:06:02'),
 (3, 'Suite', 'Kamar premium dengan ruang tamu terpisah.', '2025-12-22 07:06:02', '2025-12-22 07:06:02'),
 (4, 'Executive', 'Kamar mewah untuk pelaku bisnis.', '2025-12-22 07:06:02', '2025-12-22 07:06:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room_list`
+--
+
+CREATE TABLE `room_list` (
+  `id` int(11) NOT NULL,
+  `room_id` int(11) DEFAULT NULL,
+  `nomor_kamar` varchar(20) NOT NULL,
+  `status` enum('available','booked','cleaning') DEFAULT 'available'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `room_list`
+--
+
+INSERT INTO `room_list` (`id`, `room_id`, `nomor_kamar`, `status`) VALUES
+(1, 1, '101', 'available'),
+(2, 1, '102', 'booked'),
+(3, 1, '103', 'available'),
+(4, 2, '201', 'available'),
+(5, 2, '202', 'cleaning'),
+(6, 2, '203', 'booked'),
+(7, 3, '301', 'available'),
+(8, 3, '302', 'available'),
+(9, 4, '401', 'booked'),
+(10, 4, '402', 'available'),
+(11, 4, '100', 'available');
 
 -- --------------------------------------------------------
 
@@ -1726,6 +1756,14 @@ ALTER TABLE `room_categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `room_list`
+--
+ALTER TABLE `room_list`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nomor_kamar` (`nomor_kamar`),
+  ADD KEY `room_id` (`room_id`);
+
+--
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
@@ -2009,6 +2047,12 @@ ALTER TABLE `room_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `room_list`
+--
+ALTER TABLE `room_list`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
@@ -2104,6 +2148,12 @@ ALTER TABLE `rooms`
 ALTER TABLE `room_amenity_map`
   ADD CONSTRAINT `room_amenity_map_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`),
   ADD CONSTRAINT `room_amenity_map_ibfk_2` FOREIGN KEY (`amenity_id`) REFERENCES `room_amenities` (`id`);
+
+--
+-- Constraints for table `room_list`
+--
+ALTER TABLE `room_list`
+  ADD CONSTRAINT `room_list_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
